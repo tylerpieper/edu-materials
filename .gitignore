@@ -1,0 +1,24 @@
+# Local files
+.DS_Store
+.AppleDouble
+.thumbnail
+scratchpad.md
+uploads/
+**/assets/_sheet.png
+
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.codex/
+.claude/
+
+# Temporary files
+node_modules/
+__pycache__/
+*.py[cod]
+*.log
+*.tmp
+*~
