@@ -73,3 +73,17 @@ Hardware prices in the presentation were checked September 9, 2026. Confirm curr
 | Discord | [Join the AZMSH server](https://discord.gg/HrKtyuFEQk) |
 | Sunday radio chat | 5 pm on primary MediumFast |
 | Monday voice chat | 7 pm on Discord |
+
+## Cloudflare Pages
+
+Connect this repository to Cloudflare Pages with these settings:
+
+| Setting | Value |
+| --- | --- |
+| Production branch | `main` |
+| Framework preset | `None` |
+| Build command | `sh build-site.sh` |
+| Build output directory | `dist` |
+| Root directory | Repository root (leave unchanged) |
+
+The build copies the homepage and presentation files into `dist/`. The presentation is served at `/powerpoint-getting-started/`. No Wrangler configuration or environment variables are needed. Pushes to `main` trigger a deployment once the Git integration is connected.

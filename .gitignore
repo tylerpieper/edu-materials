@@ -22,3 +22,6 @@ __pycache__/
 *.log
 *.tmp
 *~
+
+# Website build output
+/dist/
