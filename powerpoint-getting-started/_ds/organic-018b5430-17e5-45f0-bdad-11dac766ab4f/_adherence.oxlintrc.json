@@ -20,15 +20,15 @@
       "warn",
       {
         "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
-        "message": "Raw hex color — use a design-system color token via var()."
+        "message": "Raw hex color : use a design-system color token via var()."
       },
       {
         "selector": "Literal[value=/\\b\\d+px\\b/]",
-        "message": "Raw px value — use a design-system spacing token via var()."
+        "message": "Raw px value : use a design-system spacing token via var()."
       },
       {
-        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Caprasimo|Figtree))/i]",
-        "message": "Font not provided by the design system. Available: Caprasimo, Figtree."
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Barlow Condensed|Figtree|JetBrains Mono|Menlo|Consolas|Liberation Mono))/i]",
+        "message": "Font not provided by the design system. Available: Barlow Condensed, Figtree, JetBrains Mono, Menlo, Consolas, Liberation Mono."
       }
     ]
   },
@@ -145,7 +145,7 @@
       "--shadow-lg": "shadow"
     },
     "fontFamilies": [
-      "Caprasimo",
+      "Barlow Condensed",
       "Figtree"
     ]
   }
