@@ -1,0 +1,214 @@
+<section data-label="Role Timing &amp; Routing" data-screen-label="09" data-speaker-notes="This shows how roles affect routing timing. A message leaves the sender. A Client Mute and Client Base hear it; Mute ignores, Base queues. Base broadcasts, 3 Clients hear. Furthest Client goes first due to timing, cancelling the others. Then a Router hears it and goes immediately." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH A Arizona Meshtastic Community</span><span>09</span></div>
+  <div style="display:flex;align-items:flex-end;gap:64px">
+    <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Role Timing &amp; Routing</h2>
+    <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">Roles affect <em>when</em> a node rebroadcasts, preventing collisions.</p>
+  </div>
+  <style>
+    @keyframes mtopo-ping-travel {
+      0% { offset-distance: 0%; opacity: 1; }
+      12.5% { offset-distance: 100%; opacity: 1; }
+      12.6% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes mtopo-ping-glow {
+      0% { r: 1; opacity: 0.8; }
+      6.25% { r: 2; opacity: 0.4; }
+      12.5% { r: 3; opacity: 0; }
+      100% { opacity: 0; }
+    }
+  
+    /* Node specific status animations */
+    @keyframes mtopo-status-sender {
+      0% { opacity: 1; transform: translateY(0); background: #10b981; }
+      12.5% { opacity: 1; transform: translateY(0); }
+      15% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 0; }
+    }
+    @keyframes mtopo-status-mute1 {
+      0%, 11% { opacity: 0; transform: translateY(10px); }
+      12.5%, 30% { opacity: 1; transform: translateY(0); background: #6b7280; }
+      35% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 0; }
+    }
+    @keyframes mtopo-status-base {
+      0%, 11% { opacity: 0; transform: translateY(10px); }
+      12.5%, 20.8% { opacity: 1; transform: translateY(0); background: #3b82f6; content: "Queued"; }
+      20.9%, 33% { opacity: 1; transform: translateY(0); background: #10b981; content: "Relaying"; }
+      35% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 0; }
+    }
+    @keyframes mtopo-status-client-top {
+      0%, 31% { opacity: 0; transform: translateY(10px); }
+      33.3%, 57% { opacity: 1; transform: translateY(0); background: #3b82f6; content: "Queued"; }
+      58.3%, 75% { opacity: 1; transform: translateY(0); background: #ef4444; content: "Cancelled"; }
+      80% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 0; }
+    }
+    @keyframes mtopo-status-client-far {
+      0%, 31% { opacity: 0; transform: translateY(10px); }
+      33.3%, 45.8% { opacity: 1; transform: translateY(0); background: #3b82f6; content: "Queued"; }
+      45.9%, 58% { opacity: 1; transform: translateY(0); background: #10b981; content: "Relaying"; }
+      60% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 0; }
+    }
+    @keyframes mtopo-status-router {
+      0%, 57% { opacity: 0; transform: translateY(10px); }
+      58.3%, 70% { opacity: 1; transform: translateY(0); background: #f59e0b; content: "Instant Relay"; }
+      75% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 0; }
+    }
+    @keyframes mtopo-status-dest {
+      0%, 69% { opacity: 0; transform: translateY(10px); }
+      70.8%, 95% { opacity: 1; transform: translateY(0); background: #10b981; content: "Received!"; }
+      98% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 0; }
+    }
+  
+    .mtopo-node {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+    }
+    .mtopo-device {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      position: relative;
+      z-index: 10;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+    }
+    .mtopo-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-neutral-800);
+      margin-top: 4px;
+      white-space: nowrap;
+      background: rgba(255,255,255,0.8);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .mtopo-status {
+      position: absolute;
+      top: -24px;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 3px 7px;
+      border-radius: 12px;
+      color: white;
+      white-space: nowrap;
+      opacity: 0;
+    }
+    .mtopo-status::before { content: attr(data-text); }
+  
+    #st-0 { animation: mtopo-status-sender 12s infinite; }
+    #st-1 { animation: mtopo-status-mute1 12s infinite; }
+    #st-2 { animation: mtopo-status-base 12s infinite; }
+    #st-3, #st-4 { animation: mtopo-status-client-top 12s infinite; }
+    #st-5 { animation: mtopo-status-client-far 12s infinite; }
+    #st-8 { animation: mtopo-status-router 12s infinite; }
+    #st-10 { animation: mtopo-status-dest 12s infinite; }
+  </style>
+  
+  <div style="position:relative;flex:1;background:var(--color-surface);border-radius:var(--radius-lg);overflow:hidden;min-height:500px;border:1px solid var(--color-neutral-300)">
+    <svg style="position:absolute;inset:0;width:100%;height:100%;overflow:visible" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <defs>
+        <filter id="mtopo-glow">
+          <feGaussianBlur stdDeviation="0.5" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+  
+      <!-- Background Lines -->
+      <!-- Solid (relay) lines -->
+      <line x1="10" y1="50" x2="25" y2="65" stroke="#10b981" stroke-width="0.15" />
+      <line x1="25" y1="65" x2="60" y2="75" stroke="#10b981" stroke-width="0.15" />
+      <line x1="60" y1="75" x2="75" y2="30" stroke="#10b981" stroke-width="0.15" />
+      <line x1="75" y1="30" x2="92" y2="45" stroke="#10b981" stroke-width="0.15" />
+  
+      <!-- Dotted (dead end) lines -->
+      <line x1="10" y1="50" x2="10" y2="80" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="1.5 1.5" />
+      <line x1="25" y1="65" x2="45" y2="30" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="1.5 1.5" />
+      <line x1="25" y1="65" x2="45" y2="55" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="1.5 1.5" />
+      <line x1="60" y1="75" x2="45" y2="30" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="1.5 1.5" />
+      <line x1="60" y1="75" x2="45" y2="55" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="1.5 1.5" />
+      <line x1="75" y1="30" x2="75" y2="60" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="1.5 1.5" />
+  
+      <!-- PING ANIMATIONS (12s loops) -->
+      <!-- Wave 1: Sender (t=0s) -->
+      <g><circle r="1" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 10 50 L 10 80'); animation: mtopo-ping-travel 12s infinite 0s;" /></g>
+      <g><circle r="1" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 10 50 L 25 65'); animation: mtopo-ping-travel 12s infinite 0s;" /></g>
+      <circle cx="10" cy="50" fill="none" stroke="#10b981" stroke-width="0.2" style="animation: mtopo-ping-glow 12s infinite 0s;" />
+      
+      <!-- Wave 2: Base (t=2.5s -> 2.5/12 = 20.8%) -->
+      <g><circle r="1" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 25 65 L 45 30'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
+      <g><circle r="1" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 25 65 L 45 55'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
+      <g><circle r="1" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 25 65 L 60 75'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
+      <circle cx="25" cy="65" fill="none" stroke="#10b981" stroke-width="0.2" style="animation: mtopo-ping-glow 12s infinite 2.5s;" />
+  
+      <!-- Wave 3: Far Client (t=5.5s -> 5.5/12 = 45.8%) -->
+      <g><circle r="1" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 60 75 L 45 30'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
+      <g><circle r="1" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 60 75 L 45 55'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
+      <g><circle r="1" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 60 75 L 75 30'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
+      <circle cx="60" cy="75" fill="none" stroke="#10b981" stroke-width="0.2" style="animation: mtopo-ping-glow 12s infinite 5.5s;" />
+  
+      <!-- Wave 4: Router (t=7.0s -> 7.0/12 = 58.3%) -->
+      <g><circle r="1" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 75 30 L 75 60'); animation: mtopo-ping-travel 12s infinite 7.0s;" /></g>
+      <g><circle r="1" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 75 30 L 92 45'); animation: mtopo-ping-travel 12s infinite 7.0s;" /></g>
+      <circle cx="75" cy="30" fill="none" stroke="#10b981" stroke-width="0.2" style="animation: mtopo-ping-glow 12s infinite 7.0s;" />
+    </svg>
+    
+    <!-- Nodes HTML -->
+    <div class="mtopo-node" style="left: 10%; top: 50%;">
+      <div id="st-0" class="mtopo-status" data-text="Sending..."></div>
+      <img src="assets/seeed_mesh_tracker_x1.svg" class="mtopo-device">
+      <div class="mtopo-label">client_mute</div>
+    </div>
+    <div class="mtopo-node" style="left: 10%; top: 80%;">
+      <div id="st-1" class="mtopo-status" data-text="Won't Relay"></div>
+      <img src="assets/rak_wismesh_tag.svg" class="mtopo-device">
+      <div class="mtopo-label">client_mute</div>
+    </div>
+    <div class="mtopo-node" style="left: 25%; top: 65%;">
+      <div id="st-2" class="mtopo-status" data-text="Queued"></div>
+      <img src="assets/rak3401.svg" class="mtopo-device">
+      <div class="mtopo-label">client_base</div>
+    </div>
+    <div class="mtopo-node" style="left: 45%; top: 30%;">
+      <div id="st-3" class="mtopo-status" data-text="Queued"></div>
+      <img src="assets/wio_tracker_l1_case.svg" class="mtopo-device">
+      <div class="mtopo-label">client</div>
+    </div>
+    <div class="mtopo-node" style="left: 45%; top: 55%;">
+      <div id="st-4" class="mtopo-status" data-text="Queued"></div>
+      <img src="assets/rak4631_case.svg" class="mtopo-device">
+      <div class="mtopo-label">client</div>
+    </div>
+    <div class="mtopo-node" style="left: 60%; top: 75%;">
+      <div id="st-5" class="mtopo-status" data-text="Queued"></div>
+      <img src="assets/thinknode_m9.svg" class="mtopo-device">
+      <div class="mtopo-label">client</div>
+    </div>
+    <div class="mtopo-node" style="left: 75%; top: 30%;">
+      <div id="st-8" class="mtopo-status" data-text="Instant Relay"></div>
+      <img src="assets/station-g3.svg" class="mtopo-device">
+      <div class="mtopo-label">router</div>
+    </div>
+    <div class="mtopo-node" style="left: 75%; top: 60%;">
+      <div id="st-9" class="mtopo-status" data-text=""></div>
+      <img src="assets/seeed_solar.svg" class="mtopo-device">
+      <div class="mtopo-label">client</div>
+    </div>
+    <div class="mtopo-node" style="left: 92%; top: 45%;">
+      <div id="st-10" class="mtopo-status" data-text="Received!"></div>
+      <img src="assets/tracker-t1000-e.svg" class="mtopo-device">
+      <div class="mtopo-label">client_mute</div>
+    </div>
+  </div>
+</section>

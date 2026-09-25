@@ -183,12 +183,12 @@
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
     <div style="background:var(--color-accent-200);border-radius:var(--radius-lg);padding:40px 44px;display:flex;flex-direction:column;gap:14px">
-      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700)">Network one</div>
+      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700)">Network one - MediumFast</div>
       <h3 style="font-family:var(--font-heading);font-size:44px;margin:0;color:var(--color-accent-900)">Phoenix &amp; Tucson Metro</h3>
       <p style="font-size:28px;line-height:1.45;margin:0;color:var(--color-accent-900)">Modified, community-tuned settings chosen for reliable coverage across the metros. You get them from Discord.</p>
     </div>
     <div style="background:var(--color-accent-2-200);border-radius:var(--radius-lg);padding:40px 44px;display:flex;flex-direction:column;gap:14px">
-      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-2-700)">Network two</div>
+      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-2-700)">Network two - LongFast</div>
       <h3 style="font-family:var(--font-heading);font-size:44px;margin:0;color:var(--color-accent-2-900)">Rural &amp; Outside Metro</h3>
       <p style="font-size:28px;line-height:1.45;margin:0;color:var(--color-accent-2-900)">Standard Meshtastic defaults still apply out here. Stick with those unless someone local tells you otherwise.</p>
     </div>
@@ -282,6 +282,10 @@
       <h3 style="font-family:var(--font-heading);font-size:44px;margin:0;color:var(--color-neutral-100)">Phoenix &amp; Tucson Metro</h3>
       <div style="display:flex;flex-direction:column;gap:22px">
         <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--color-accent-700);padding-bottom:14px">
+          <span style="font-size:28px;color:var(--color-accent-200)">Region</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:40px;font-weight:700">US</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--color-accent-700);padding-bottom:14px">
           <span style="font-size:28px;color:var(--color-accent-200)">Preset</span>
           <span style="font-family:'JetBrains Mono',monospace;font-size:40px;font-weight:700">Medium-Fast</span>
         </div>
@@ -298,6 +302,10 @@
     <div style="background:var(--color-accent-2-800);color:var(--color-accent-2-100);border-radius:var(--radius-lg);padding:44px 48px;display:flex;flex-direction:column;gap:28px">
       <h3 style="font-family:var(--font-heading);font-size:44px;margin:0;color:var(--color-neutral-100)">Outside the Metros</h3>
       <div style="display:flex;flex-direction:column;gap:22px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--color-accent-2-700);padding-bottom:14px">
+          <span style="font-size:28px;color:var(--color-accent-2-200)">Region</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:40px;font-weight:700">US</span>
+        </div>
         <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--color-accent-2-700);padding-bottom:14px">
           <span style="font-size:28px;color:var(--color-accent-2-200)">Preset</span>
           <span style="font-family:'JetBrains Mono',monospace;font-size:40px;font-weight:700">Long-Fast</span>
@@ -327,9 +335,9 @@
       <div style="position:relative;height:110px;display:flex;align-items:center;justify-content:center">
         <span style="display:flex;align-items:center;justify-content:center;width:78px;height:78px;border-radius:999px;background:var(--color-accent-2-300);color:var(--color-accent-2-900);position:relative;z-index:1"><span style="display:block;width:38px;height:38px"><i data-lucide="radio"></i></span></span>
       </div>
-      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-2-700)">Anything mobile</div>
+      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-2-700)">Not a good relay</div>
       <h3 style="font-family:var(--font-heading);font-size:36px;margin:0">Client Mute</h3>
-      <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-neutral-800)">Sends and receives, never rebroadcasts anyone else's traffic. Right for backpacks, vehicles and pocket nodes, and the safest role to start with.</p>
+      <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-neutral-800)">Sends and receives, never rebroadcasts. Use on any node that is not a good candidate to relay, like a pocket tag or an MQTT uplink in a closet.</p>
     </div>
     <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:30px 30px 32px;display:flex;flex-direction:column;gap:14px">
       <div style="position:relative;height:110px;display:flex;align-items:center;justify-content:center">
@@ -337,9 +345,9 @@
         <span style="position:absolute;width:78px;height:78px;border-radius:999px;border:3px solid var(--color-accent-500);animation:azFan 4.4s ease-out infinite;animation-delay:2.2s"></span>
         <span style="display:flex;align-items:center;justify-content:center;width:78px;height:78px;border-radius:999px;background:var(--color-accent-300);color:var(--color-accent-900);position:relative;z-index:1"><span style="display:block;width:38px;height:38px"><i data-lucide="house"></i></span></span>
       </div>
-      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700)">Stationary home or roof</div>
+      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-700)">Homes and Vehicles</div>
       <h3 style="font-family:var(--font-heading);font-size:36px;margin:0">Client</h3>
-      <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-neutral-800)">The standard role. Rebroadcasts messages and extends coverage for your neighbors. Most stationary home nodes belong here.</p>
+      <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-neutral-800)">The standard role. Extends coverage for your neighbors. Most home nodes belong here. It's also great for vehicles, helping your pocket node get onto the mesh from inside a building.</p>
     </div>
     <div style="background:var(--color-accent-2-200);border-radius:var(--radius-lg);padding:30px 30px 32px;display:flex;flex-direction:column;gap:14px">
       <div style="position:relative;height:110px;display:flex;align-items:center;justify-content:center">
@@ -347,9 +355,9 @@
         <span style="position:absolute;width:78px;height:78px;border-radius:999px;border:3px solid var(--color-accent-2-600);animation:azFan 4.4s ease-out infinite;animation-delay:2.2s"></span>
         <span style="display:flex;align-items:center;justify-content:center;width:78px;height:78px;border-radius:999px;background:var(--color-accent-2-600);color:var(--color-neutral-100);position:relative;z-index:1"><span style="display:block;width:38px;height:38px"><i data-lucide="star"></i></span></span>
       </div>
-      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-2-800)">Attic or roof base station</div>
+      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-2-800)">Priority relay for your nodes</div>
       <h3 style="font-family:var(--font-heading);font-size:36px;margin:0;color:var(--color-accent-2-900)">Client Base</h3>
-      <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-accent-2-900)">Behaves like Client, but gives priority to rebroadcasting anything from or to its favorited nodes. Set your strongest high node to this, then favorite your other nodes on it.</p>
+      <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-accent-2-900)">Good for any node that you want to relay traffic from your own nodes (rooftops, vehicles, etc.). It gives priority to rebroadcasting anything from or to your favorites.</p>
     </div>
     <div style="background:var(--color-accent-200);border-radius:var(--radius-lg);padding:30px 30px 32px;display:flex;flex-direction:column;gap:14px">
       <div style="position:relative;height:110px;display:flex;align-items:center;justify-content:center">
@@ -366,49 +374,263 @@
   <p style="font-size:27px;line-height:1.45;margin:0;color:var(--color-neutral-700)">The three client roles all rebroadcast sensibly and are safe to pick between. Router is the only one that can damage the mesh if it is used in the wrong place.</p>
 </section>
 
-<section data-label="TAK Integration" data-screen-label="09" data-speaker-notes="This slide covers TAK for search-and-rescue and outdoor coordination. Meshtastic bridges into ATAK and WinTAK over the mesh with no cell or internet. Only change your role if you are using ATAK, because a plain Client does not participate in TAK." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:38px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>09</span></div>
+
+
+<section data-label="Role Timing &amp; Routing" data-screen-label="09" data-speaker-notes="This shows how roles affect routing timing. A message leaves the sender. A Client Mute and Client Base hear it; Mute ignores, Base queues. Base broadcasts, 3 Clients hear. Furthest Client goes first due to timing, cancelling the others. Then a Router hears it and goes immediately." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH A Arizona Meshtastic Community</span><span>09</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
-    <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">TAK Integration</h2>
-    <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">Meshtastic bridges into the Team Awareness Kit used by search-and-rescue and outdoor coordination teams. It runs over the mesh with no cell service or internet.</p>
+    <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Role Timing &amp; Routing</h2>
+    <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">Roles affect <em>when</em> a node rebroadcasts, preventing collisions.</p>
   </div>
-  <div style="display:grid;grid-template-columns:1fr 700px;gap:56px;flex:1">
-    <div style="display:flex;flex-direction:column;gap:24px">
-      <div style="display:flex;gap:24px;align-items:flex-start">
-        <span style="display:flex;align-items:center;justify-content:center;flex:0 0 52px;width:52px;height:52px;border-radius:999px;background:var(--color-accent-500);color:var(--color-neutral-100);font-family:var(--font-heading);font-size:28px">1</span>
-        <div>
-          <h3 style="font-family:var(--font-heading);font-size:34px;margin:0 0 6px">Install the ATAK plugin</h3>
-          <p style="font-size:26px;line-height:1.45;margin:0;color:var(--color-neutral-800)">The official Meshtastic plugin for Android bridges Cursor on Target events between ATAK and your mesh.</p>
-        </div>
-      </div>
-      <div style="display:flex;gap:24px;align-items:flex-start">
-        <span style="display:flex;align-items:center;justify-content:center;flex:0 0 52px;width:52px;height:52px;border-radius:999px;background:var(--color-accent-500);color:var(--color-neutral-100);font-family:var(--font-heading);font-size:28px">2</span>
-        <div>
-          <h3 style="font-family:var(--font-heading);font-size:34px;margin:0 0 6px">Set the device role to TAK</h3>
-          <p style="font-size:26px;line-height:1.45;margin:0;color:var(--color-neutral-800)">This tunes the node for ATAK traffic and cuts routine broadcasts. Use TAK Tracker instead when the node has GPS but no ATAK device attached.</p>
-        </div>
-      </div>
-      <div style="display:flex;gap:24px;align-items:flex-start">
-        <span style="display:flex;align-items:center;justify-content:center;flex:0 0 52px;width:52px;height:52px;border-radius:999px;background:var(--color-accent-500);color:var(--color-neutral-100);font-family:var(--font-heading);font-size:28px">3</span>
-        <div>
-          <h3 style="font-family:var(--font-heading);font-size:34px;margin:0 0 6px">Chat and location flow both ways</h3>
-          <p style="font-size:26px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Positions, messages and other CoT events move between ATAK and Meshtastic across the mesh.</p>
-        </div>
-      </div>
+  <style>
+  @keyframes mtopo-ping-travel {
+    0% { offset-distance: 0%; opacity: 1; }
+    12.5% { offset-distance: 100%; opacity: 1; }
+    12.6% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  @keyframes mtopo-ping-glow {
+    0% { r: 1; opacity: 0.8; }
+    6.25% { r: 4; opacity: 0.4; }
+    12.5% { r: 7; opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes st-sender {
+    0%, 12.5% { opacity: 1; transform: translateY(0); background: #10b981; }
+    15%, 100% { opacity: 0; transform: translateY(-10px); background: #10b981; }
+  }
+  @keyframes ct-sender { 0%, 100% { content: "Sent"; } }
+
+  @keyframes st-mute1 {
+    0%, 11% { opacity: 0; transform: translateY(10px); }
+    12.5%, 30% { opacity: 1; transform: translateY(0); background: #6b7280; }
+    35%, 100% { opacity: 0; transform: translateY(-10px); background: #6b7280; }
+  }
+  @keyframes ct-mute1 { 0%, 100% { content: "Won't Relay"; } }
+
+  @keyframes st-base {
+    0%, 11% { opacity: 0; transform: translateY(10px); }
+    12.5%, 20.7% { opacity: 1; transform: translateY(0); background: #3b82f6; }
+    20.8%, 35% { opacity: 1; transform: translateY(0); background: #10b981; }
+    40%, 100% { opacity: 0; transform: translateY(-10px); }
+  }
+  @keyframes ct-base {
+    0%, 20.7% { content: "Queued"; }
+    20.8%, 100% { content: "Sent"; }
+  }
+
+  @keyframes st-client-cancel {
+    0%, 31% { opacity: 0; transform: translateY(10px); }
+    33.3%, 58.2% { opacity: 1; transform: translateY(0); background: #3b82f6; }
+    58.3%, 75% { opacity: 1; transform: translateY(0); background: #ef4444; }
+    80%, 100% { opacity: 0; transform: translateY(-10px); }
+  }
+  @keyframes ct-client-cancel {
+    0%, 58.2% { content: "Queued"; }
+    58.3%, 100% { content: "Cancelled"; }
+  }
+
+  @keyframes st-client-relay {
+    0%, 31% { opacity: 0; transform: translateY(10px); }
+    33.3%, 45.7% { opacity: 1; transform: translateY(0); background: #3b82f6; }
+    45.8%, 60% { opacity: 1; transform: translateY(0); background: #10b981; }
+    65%, 100% { opacity: 0; transform: translateY(-10px); }
+  }
+  @keyframes ct-client-relay {
+    0%, 45.7% { content: "Queued"; }
+    45.8%, 100% { content: "Sent"; }
+  }
+
+  @keyframes st-router {
+    0%, 57% { opacity: 0; transform: translateY(10px); }
+    58.3%, 62.4% { opacity: 1; transform: translateY(0); background: #3b82f6; }
+    62.5%, 75% { opacity: 1; transform: translateY(0); background: #10b981; }
+    80%, 100% { opacity: 0; transform: translateY(-10px); }
+  }
+  @keyframes ct-router {
+    0%, 62.4% { content: "Queued"; }
+    62.5%, 100% { content: "Sent"; }
+  }
+
+  @keyframes st-client-right {
+    0%, 57% { opacity: 0; transform: translateY(10px); }
+    58.3%, 74.9% { opacity: 1; transform: translateY(0); background: #3b82f6; }
+    75%, 90% { opacity: 1; transform: translateY(0); background: #ef4444; }
+    95%, 100% { opacity: 0; transform: translateY(-10px); }
+  }
+  @keyframes ct-client-right {
+    0%, 74.9% { content: "Queued"; }
+    75%, 100% { content: "Cancelled"; }
+  }
+
+  @keyframes st-dest {
+    0%, 73% { opacity: 0; transform: translateY(10px); }
+    75%, 95% { opacity: 1; transform: translateY(0); background: #10b981; }
+    98%, 100% { opacity: 0; transform: translateY(-10px); }
+  }
+  @keyframes ct-dest { 0%, 100% { content: "Received!"; } }
+
+  .mtopo-node {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+  }
+  .mtopo-device {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    position: relative;
+    z-index: 10;
+    filter: drop-shadow(0 6px 8px rgba(0,0,0,0.15));
+  }
+  .mtopo-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-neutral-800);
+    margin-top: 6px;
+    white-space: nowrap;
+    background: rgba(255,255,255,0.85);
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+  .mtopo-status {
+    position: absolute;
+    top: -30px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: white;
+    white-space: nowrap;
+    opacity: 0;
+  }
+  .mtopo-status::before { content: ""; }
+
+  #st-0 { animation: st-sender 12s infinite; }
+  #st-0::before { animation: ct-sender 12s infinite; }
+  #st-1 { animation: st-mute1 12s infinite; }
+  #st-1::before { animation: ct-mute1 12s infinite; }
+  #st-2 { animation: st-base 12s infinite; }
+  #st-2::before { animation: ct-base 12s infinite; }
+  #st-3, #st-4 { animation: st-client-cancel 12s infinite; }
+  #st-3::before, #st-4::before { animation: ct-client-cancel 12s infinite; }
+  #st-5 { animation: st-client-relay 12s infinite; }
+  #st-5::before { animation: ct-client-relay 12s infinite; }
+  #st-8 { animation: st-router 12s infinite; }
+  #st-8::before { animation: ct-router 12s infinite; }
+  #st-9 { animation: st-client-right 12s infinite; }
+  #st-9::before { animation: ct-client-right 12s infinite; }
+  #st-10 { animation: st-dest 12s infinite; }
+  #st-10::before { animation: ct-dest 12s infinite; }
+</style>
+
+<div style="display:flex; justify-content:center; align-items:center; flex:1; width:100%;">
+  <div style="position:relative; width:100%; max-width:1600px; max-height:800px; aspect-ratio: 2/1; background:var(--color-surface); border-radius:var(--radius-lg); border:1px solid var(--color-neutral-300); overflow:visible;">
+    <svg style="position:absolute; inset:0; width:100%; height:100%; overflow:visible" viewBox="0 0 1000 500" preserveAspectRatio="none">
+      <defs>
+        <filter id="mtopo-glow">
+          <feGaussianBlur stdDeviation="1.5" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+  
+      <!-- Solid gray lines for all connections -->
+      <line x1="100" y1="250" x2="100" y2="400" stroke="#9ca3af" stroke-width="2.5" />
+      <line x1="100" y1="250" x2="250" y2="325" stroke="#9ca3af" stroke-width="2.5" />
+      
+      <line x1="250" y1="325" x2="450" y2="150" stroke="#9ca3af" stroke-width="2.5" />
+      <line x1="250" y1="325" x2="450" y2="275" stroke="#9ca3af" stroke-width="2.5" />
+      <line x1="250" y1="325" x2="600" y2="375" stroke="#9ca3af" stroke-width="2.5" />
+      
+      <line x1="600" y1="375" x2="450" y2="150" stroke="#9ca3af" stroke-width="2.5" />
+      <line x1="600" y1="375" x2="450" y2="275" stroke="#9ca3af" stroke-width="2.5" />
+      <line x1="600" y1="375" x2="750" y2="150" stroke="#9ca3af" stroke-width="2.5" />
+      <line x1="600" y1="375" x2="750" y2="300" stroke="#9ca3af" stroke-width="2.5" />
+  
+      <line x1="750" y1="150" x2="750" y2="300" stroke="#9ca3af" stroke-width="2.5" />
+      <line x1="750" y1="150" x2="920" y2="225" stroke="#9ca3af" stroke-width="2.5" />
+  
+      <!-- Wave 1: Sender (t=0s) -->
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 100 250 L 100 400'); animation: mtopo-ping-travel 12s infinite 0s;" /></g>
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 100 250 L 250 325'); animation: mtopo-ping-travel 12s infinite 0s;" /></g>
+      <circle cx="100" cy="250" fill="none" stroke="#10b981" stroke-width="2.5" style="animation: mtopo-ping-glow 12s infinite 0s;" />
+      
+      <!-- Wave 2: Base (t=2.5s) -->
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 250 325 L 450 150'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 250 325 L 450 275'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 250 325 L 600 375'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
+      <circle cx="250" cy="325" fill="none" stroke="#10b981" stroke-width="2.5" style="animation: mtopo-ping-glow 12s infinite 2.5s;" />
+  
+      <!-- Wave 3: Far Client (t=5.5s) -->
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 450 150'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 450 275'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 750 150'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 750 300'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
+      <circle cx="600" cy="375" fill="none" stroke="#10b981" stroke-width="2.5" style="animation: mtopo-ping-glow 12s infinite 5.5s;" />
+  
+      <!-- Wave 4: Router (t=7.5s) -->
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 750 300'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 920 225'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
+      <circle cx="750" cy="150" fill="none" stroke="#10b981" stroke-width="2.5" style="animation: mtopo-ping-glow 12s infinite 7.5s;" />
+    </svg>
+    
+    <div class="mtopo-node" style="left: 10%; top: 50%;">
+      <div id="st-0" class="mtopo-status"></div>
+      <img src="assets/thinknode_m9.svg" class="mtopo-device">
+      <div class="mtopo-label">client_mute</div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:24px">
-      <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:32px 36px;display:flex;flex-direction:column;gap:10px">
-        <h3 style="font-family:var(--font-heading);font-size:36px;margin:0">Role: TAK</h3>
-        <p style="font-size:26px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Optimized for ATAK. Needs the plugin running to send and receive chat, markers and other CoT events.</p>
-      </div>
-      <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:32px 36px;display:flex;flex-direction:column;gap:10px">
-        <h3 style="font-family:var(--font-heading);font-size:36px;margin:0">Role: TAK Tracker</h3>
-        <p style="font-size:26px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Broadcasts position automatically and shows up on ATAK maps with no extra setup. Can be used as a standalone tracker.</p>
-      </div>
-      <p style="font-size:26px;line-height:1.45;margin:0;color:var(--color-accent-700);font-weight:600">A standard Client node does not participate in TAK. Only switch roles if you are actually running ATAK or WinTAK.</p>
+    <div class="mtopo-node" style="left: 10%; top: 80%;">
+      <div id="st-1" class="mtopo-status"></div>
+      <img src="assets/rak_wismesh_tag.svg" class="mtopo-device">
+      <div class="mtopo-label">client_mute</div>
+    </div>
+    <div class="mtopo-node" style="left: 25%; top: 65%;">
+      <div id="st-2" class="mtopo-status"></div>
+      <img src="assets/rak3401.svg" class="mtopo-device">
+      <div class="mtopo-label">client_base</div>
+    </div>
+    <div class="mtopo-node" style="left: 45%; top: 30%;">
+      <div id="st-3" class="mtopo-status"></div>
+      <img src="assets/wio_tracker_l1_case.svg" class="mtopo-device">
+      <div class="mtopo-label">client</div>
+    </div>
+    <div class="mtopo-node" style="left: 45%; top: 55%;">
+      <div id="st-4" class="mtopo-status"></div>
+      <img src="assets/rak4631_case.svg" class="mtopo-device">
+      <div class="mtopo-label">client</div>
+    </div>
+    <div class="mtopo-node" style="left: 60%; top: 75%;">
+      <div id="st-5" class="mtopo-status"></div>
+      <img src="assets/thinknode_m6.svg" class="mtopo-device">
+      <div class="mtopo-label">client</div>
+    </div>
+    <div class="mtopo-node" style="left: 75%; top: 30%;">
+      <div id="st-8" class="mtopo-status"></div>
+      <img src="assets/station-g3.svg" class="mtopo-device">
+      <div class="mtopo-label">router</div>
+    </div>
+    <div class="mtopo-node" style="left: 75%; top: 60%;">
+      <div id="st-9" class="mtopo-status"></div>
+      <img src="assets/seeed_solar.svg" class="mtopo-device">
+      <div class="mtopo-label">client</div>
+    </div>
+    <div class="mtopo-node" style="left: 92%; top: 45%;">
+      <div id="st-10" class="mtopo-status"></div>
+      <img src="assets/tracker-t1000-e.svg" class="mtopo-device">
+      <div class="mtopo-label">client_mute</div>
     </div>
   </div>
+</div>
+
 </section>
+
 
 <section data-label="Broadcast Intervals" data-screen-label="10" data-speaker-notes="Explain that frequent broadcasts use airtime other nodes need for messages. Mobile and stationary get different numbers. Refer to the Recommended Settings page for details, including Neighbor Info." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:38px">
   <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>10</span></div>
@@ -426,7 +648,7 @@
     <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);font-weight:600">12 hours</div>
 
     <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200)">Smart broadcast</div>
-    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200);font-weight:600">On, 100 m / 60 s</div>
+    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200);font-weight:600">15 minutes or as needed</div>
     <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200);font-weight:600">Off</div>
 
     <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider)">Position broadcast</div>
@@ -434,71 +656,49 @@
     <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);font-weight:600">12 hours</div>
 
     <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200)">GPS update interval</div>
-    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200);font-weight:600">5 minutes</div>
-    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200);font-weight:600">6 hours</div>
+    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200);font-weight:600">Same as smart broadcast</div>
+    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200);font-weight:600">Same as position broadcast</div>
 
     <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider)">Device, environment, power metrics</div>
-    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);font-weight:600">1 hour</div>
-    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);font-weight:600">1 hour</div>
+    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);font-weight:600">1 hour or more, as needed</div>
+    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);font-weight:600">1 hour or more, as needed</div>
 
     <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200)">Map report</div>
-    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200);font-weight:600">1 hour</div>
-    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200);font-weight:600">6 hours</div>
+    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200);font-weight:600">12 hours</div>
+    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200);font-weight:600">12 hours</div>
 
     <div style="padding:20px 24px">Neighbor info</div>
-    <div style="padding:20px 24px;font-weight:600">4 hours</div>
+    <div style="padding:20px 24px;font-weight:600">Off</div>
     <div style="padding:20px 24px;font-weight:600">11 hours</div>
   </div>
   <p style="font-size:27px;line-height:1.45;margin:0;color:var(--color-neutral-700)">Set Neighbor Info in the iOS or Android app, web client or CLI. See Recommended Settings at azmsh.net for details.</p>
 </section>
 
-<section data-label="MQTT &amp; Diagnostics" data-screen-label="11" data-speaker-notes="Explain which data the recommended MQTT setup shares. MQTT shares metadata, never message content. Use the three setup steps and get broker credentials from Discord. Downlink stays off, because that is the setting that floods the mesh with internet traffic." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:38px">
+<section data-label="MQTT &amp; Diagnostics" data-screen-label="11" data-speaker-notes="Explain the difference between OK to MQTT and an Uplink. Downlink stays off." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:38px">
   <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>11</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
     <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">MQTT and Diagnostics</h2>
-    <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">Your node uploads diagnostic data to a shared broker. The community map and the coverage reports are built from it.</p>
+    <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">AZMSH runs our own MQTT broker to power community maps and metrics dashboards. To participate, you must understand two distinct settings.</p>
   </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr 1.1fr;gap:32px;flex:1">
-    <div style="background:var(--color-accent-2-200);border-radius:var(--radius-lg);padding:36px 40px;display:flex;flex-direction:column;gap:18px">
-      <div style="display:flex;align-items:center;gap:16px">
-        <span style="display:block;width:40px;height:40px;flex:0 0 40px;color:var(--color-accent-2-800)"><i data-lucide="cloud-upload"></i></span>
-        <span style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-2-800)">Does share</span>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:12px;font-size:29px;color:var(--color-accent-2-900)">
-        <span>Position</span>
-        <span>Battery level</span>
-        <span>Signal metrics</span>
-        <span>Channel utilization</span>
-      </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;flex:1">
+    <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:36px 40px;display:flex;flex-direction:column;gap:18px">
+      <h3 style="font-family:var(--font-heading);font-size:36px;margin:0;color:var(--color-accent-700)">1. "OK to MQTT"</h3>
+      <p style="font-size:27px;line-height:1.45;margin:0;color:var(--color-neutral-800)">This simply gives permission for your node's basic diagnostic packets to be uploaded by <em>someone else's</em> MQTT uplink when they hear you. It is highly recommended to leave this ON.</p>
+      <h3 style="font-family:var(--font-heading);font-size:36px;margin:24px 0 0;color:var(--color-accent-700)">2. Being an MQTT Uplink</h3>
+      <p style="font-size:27px;line-height:1.45;margin:0;color:var(--color-neutral-800)">If your node has WiFi, it can act as the bridge. It will upload public channel messages and all other packet types for both your node and <em>any nodes you hear</em>.</p>
+      <p style="font-size:27px;line-height:1.45;margin:0;color:var(--color-neutral-800)">It does <strong>not</strong> process direct messages or your private channels. Even if you accidentally enable uplink for your private channel, our MQTT server can't decrypt the messages.</p>
     </div>
-    <div style="background:var(--color-accent-200);border-radius:var(--radius-lg);padding:36px 40px;display:flex;flex-direction:column;gap:18px">
-      <div style="display:flex;align-items:center;gap:16px">
-        <span style="display:block;width:40px;height:40px;flex:0 0 40px;color:var(--color-accent-800)"><i data-lucide="cloud-off"></i></span>
-        <span style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-800)">Never shares</span>
+    <div style="background:var(--color-accent-800);color:var(--color-accent-100);border-radius:var(--radius-lg);padding:36px 40px;display:flex;flex-direction:column;gap:18px">
+      <h3 style="font-family:var(--font-heading);font-size:36px;margin:0;color:var(--color-neutral-100)">Broker Settings (Uplinks Only)</h3>
+      <div style="display:flex;flex-direction:column;gap:12px;font-family:'JetBrains Mono',monospace;font-size:26px;color:var(--color-accent-200);margin-top:10px">
+        <div><span style="color:var(--color-neutral-100)">Server:</span> mqtt.azmsh.net</div>
+        <div><span style="color:var(--color-neutral-100)">Username:</span> azmshpub</div>
+        <div><span style="color:var(--color-neutral-100)">Password:</span> YZ5aozF6TF8iq</div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:12px;font-size:29px;color:var(--color-accent-900)">
-        <span>Private messages</span>
-        <span>Direct messages</span>
-        <span>Encrypted channel content</span>
-      </div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:20px">
-      <h3 style="font-family:var(--font-heading);font-size:36px;margin:0">Turning it on</h3>
-      <div style="display:flex;gap:20px;align-items:baseline">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:var(--color-accent-600)">01</span>
-        <p style="font-size:27px;line-height:1.4;margin:0"><span>LoRa settings: switch on "OK to MQTT".</span></p>
-      </div>
-      <div style="display:flex;gap:20px;align-items:baseline">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:var(--color-accent-600)">02</span>
-        <p style="font-size:27px;line-height:1.4;margin:0"><span>MQTT module: enter the broker details from Discord.</span></p>
-      </div>
-      <div style="display:flex;gap:20px;align-items:baseline">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:var(--color-accent-600)">03</span>
-        <p style="font-size:27px;line-height:1.4;margin:0"><span>Channel settings: uplink on, downlink off.</span></p>
-      </div>
-      <div style="background:var(--color-accent-800);color:var(--color-accent-100);border-radius:var(--radius-md);padding:26px 30px;display:flex;gap:18px;align-items:flex-start;margin-top:4px">
-        <span style="display:block;width:36px;height:36px;flex:0 0 36px;color:var(--color-accent-300)"><i data-lucide="triangle-alert"></i></span>
-        <p style="font-size:27px;line-height:1.4;margin:0">Leave downlink off. Downlinking pushes internet traffic back into the radio mesh.</p>
+      <p style="font-size:27px;line-height:1.45;margin:16px 0 0;color:var(--color-accent-100)"><strong>Channel Settings:</strong> Set Uplink ON and Downlink OFF.</p>
+      <div style="background:rgba(0,0,0,0.25);border-radius:var(--radius-md);padding:26px 30px;display:flex;gap:18px;align-items:flex-start;margin-top:auto">
+        <span style="display:block;width:36px;height:36px;flex:0 0 36px;color:var(--color-accent-400)"><i data-lucide="triangle-alert"></i></span>
+        <p style="font-size:24px;line-height:1.4;margin:0">Keep downlink OFF. The credentials above won't allow you to downlink even if you accidentally enable it.</p>
       </div>
     </div>
   </div>
@@ -516,15 +716,15 @@
     <div style="padding:18px 24px;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600);border-bottom:3px solid var(--color-neutral-400)">Size (iOS)</div>
     <div style="padding:18px 24px;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600);border-bottom:3px solid var(--color-neutral-400)">What it is for</div>
 
-    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);font-family:'JetBrains Mono',monospace;font-weight:700">MediumFast</div>
+    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);font-family:'JetBrains Mono',monospace;font-weight:700">(Leave Blank)</div>
     <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);font-family:'JetBrains Mono',monospace;color:var(--color-accent-700);font-weight:700"><code class="channel-key">AQ==</code></div>
     <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider)">Default</div>
-    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);font-size:27px">The default primary channel. The name can also be left blank</div>
+    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);font-size:27px">The primary channel. This is where most humans talk. Leave the name blank when configuring; it will automatically name itself MediumFast or LongFast.</div>
 
     <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200);font-family:'JetBrains Mono',monospace;font-weight:700">azmsh</div>
     <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200);font-family:'JetBrains Mono',monospace;color:var(--color-accent-700);font-weight:700"><code class="channel-key">AQ==</code></div>
     <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200)">Default</div>
-    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200);font-size:27px">The Arizona channel for testing and general chatter</div>
+    <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);background:var(--color-neutral-200);font-size:27px">The Arizona channel for testing, diagnostics, and high-volume traffic to keep the primary channel clean.</div>
 
     <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);font-family:'JetBrains Mono',monospace;font-weight:700">Weather</div>
     <div style="padding:20px 24px;border-bottom:1px solid var(--color-divider);font-family:'JetBrains Mono',monospace;color:var(--color-accent-700);font-weight:700"><code class="channel-key">Ww==</code></div>
@@ -549,90 +749,149 @@
 <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0">Portable Nodes</h2>
 <p style="font-size:30px;line-height:1.4;margin:0">Pair these radios with your phone to send messages and share your location.</p>
 <div class="hardware-grid"><article class="hardware-card">
-  <p class="hardware-kind">Pocket tracker</p>
-  <h3>SenseCAP T1000-E</h3>
-  <p class="hardware-price">$39.90</p>
-  <p class="hardware-detail">GPS in a slim, enclosed radio. Internal antenna and magnetic charging cable.</p>
-  <p class="hardware-detail hardware-note">Choose the Meshtastic version.</p>
-  <a href="https://www.seeedstudio.com/SenseCAP-Card-Tracker-T1000-E-for-Meshtastic-p-5913.html" target="_blank" rel="noopener noreferrer">Product details and price ↗</a>
+  <p class="hardware-kind">Card trackers</p>
+  <h3>SenseCap X1, T1000e, Rak Wismesh Tag</h3>
+  <p class="hardware-price">~$39 - $50</p>
+  <div style="height:110px;display:flex;align-items:center;justify-content:center;gap:12px;margin:12px 0">
+    <img src="assets/seeed_mesh_tracker_x1.svg" style="max-height:100%;max-width:30%;object-fit:contain">
+    <img src="assets/tracker-t1000-e.svg" style="max-height:100%;max-width:30%;object-fit:contain">
+    <img src="assets/rak_wismesh_tag.svg" style="max-height:100%;max-width:30%;object-fit:contain">
+  </div>
+  <p class="hardware-detail">GPS in a slim, enclosed radio. Internal antenna and magnetic or USB-C charging.</p>
+  <p class="hardware-detail hardware-note">Great for pets, keys, or throwing in a backpack.</p>
 </article><article class="hardware-card">
-  <p class="hardware-kind">Screen and GPS</p>
-  <h3>LILYGO T-Echo</h3>
-  <p class="hardware-price">From $48.49</p>
-  <p class="hardware-detail">E-paper screen, GPS and an 850 mAh battery in a case.</p>
-  <p class="hardware-detail hardware-note">Price and stock depend on the frequency and warehouse.</p>
-  <a href="https://lilygo.cc/en-us/products/t-echo-meshtastic" target="_blank" rel="noopener noreferrer">Product details and price ↗</a>
+  <p class="hardware-kind">Seeed Studio</p>
+  <h3>Wio Tracker L1 Pro</h3>
+  <p class="hardware-price">~$43</p>
+  <div style="height:110px;display:flex;align-items:center;justify-content:center;margin:12px 0"><img src="assets/wio_tracker_l1_case.svg" style="max-height:100%;max-width:100%;object-fit:contain"></div>
+  <p class="hardware-detail">Compact device with screen and GPS in a nice case.</p>
+  <p class="hardware-detail hardware-note">NOTE: antenna connector is RP-SMA. Will need a swap to an IPEX to SMA pigtail to swap antenna.</p>
 </article><article class="hardware-card">
-  <p class="hardware-kind">Larger battery</p>
-  <h3>RAK WisMesh Pocket V2</h3>
-  <p class="hardware-price">$89.97</p>
+  <p class="hardware-kind">RAKwireless</p>
+  <h3>WisMesh Pocket V2</h3>
+  <p class="hardware-price">~$89</p>
+  <div style="height:110px;display:flex;align-items:center;justify-content:center;margin:12px 0"><img src="assets/rak4631_case.svg" style="max-height:100%;max-width:100%;object-fit:contain"></div>
   <p class="hardware-detail">GPS, OLED screen and a 3200 mAh battery. Meshtastic is preinstalled.</p>
-  <p class="hardware-detail hardware-note">Includes an antenna and USB cable.</p>
-  <a href="https://store.rakwireless.com/products/wismesh-pocket" target="_blank" rel="noopener noreferrer">Product details and price ↗</a>
+  <p class="hardware-detail hardware-note">An excellent, reliable daily driver with long battery life.</p>
 </article></div>
 <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-neutral-700)">USD · Checked Sep. 9, 2026 · Shipping and tax extra · Prices vary by option.<br>For Arizona, choose US915-compatible hardware and the local AZMSH settings.</p>
 </section>
 
-<section data-label="Boards for DIY Nodes" data-screen-label="14" data-speaker-notes="Prices checked September 9, 2026 in USD. Manufacturer listings exclude shipping and tax. Starting prices may apply to a different warehouse or variant. Choose hardware for US915 in Arizona. A product named repeater does not require the Router device role. Seeed XIAO nRF52840 kit: $13.49. Source: https://www.seeedstudio.com/XIAO-nRF52840-Wio-SX1262-Kit-for-Meshtastic-p-6400.html. Heltec Mesh Node T114: $17.90 to $33.70. Source: https://heltec.org/project/mesh-node-t114/. RAK WisBlock Starter Kit: From $24.99. Source: https://store.rakwireless.com/products/wisblock-meshtastic-starter-kit." class="hardware-slide" style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:32px">
+<section data-label="Recommended Antennas" data-screen-label="14" data-speaker-notes="Antennas are important." class="hardware-slide" style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:32px">
 <div style="display:flex;justify-content:space-between;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>14</span></div>
+<h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0">Recommended Antennas</h2>
+<p style="font-size:30px;line-height:1.4;margin:0">A good antenna is the best upgrade for any node.</p>
+<div class="hardware-grid"><article class="hardware-card">
+  <p class="hardware-kind">Rokland</p>
+  <h3>5.8 dBi Fiberglass</h3>
+  <p class="hardware-price">~$30 - $40</p>
+  <p class="hardware-detail">High gain fiberglass antenna for base stations. 32" tall.</p>
+  <p class="hardware-detail hardware-note">The sweet spot for all-around rooftop deployments.</p>
+</article><article class="hardware-card">
+  <p class="hardware-kind">ALFA Network</p>
+  <h3>AOA-915-5ACM</h3>
+  <p class="hardware-price">~$25 - $35</p>
+  <p class="hardware-detail">Compact 5 dBi outdoor antenna. Only 7" tall.</p>
+  <p class="hardware-detail hardware-note">Great for stealthy outdoor builds.</p>
+</article><article class="hardware-card">
+  <p class="hardware-kind">Muziworks &amp; MESHTAC</p>
+  <h3>17cm Whip &amp; Gooseneck</h3>
+  <p class="hardware-price">~$12 - $25</p>
+  <p class="hardware-detail">Excellent durability and performance upgrades for handhelds.</p>
+  <p class="hardware-detail hardware-note">Ensure you get the right connector (SMA vs RP-SMA).</p>
+</article></div>
+<p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-neutral-700)">USD · Checked Sep. 9, 2026 · Shipping and tax extra · Prices vary by option.<br>For Arizona, choose US915-compatible hardware and the local AZMSH settings.</p>
+</section>
+
+<section data-label="Meshtastic UI Options" data-screen-label="15" data-speaker-notes="Standalone UI options." class="hardware-slide" style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;justify-content:space-between;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>15</span></div>
+<h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0">Meshtastic UI Options</h2>
+<p style="font-size:30px;line-height:1.4;margin:0">Standalone nodes with built-in keyboards and screens. No phone required.</p>
+<div class="hardware-grid"><article class="hardware-card">
+  <p class="hardware-kind">LILYGO</p>
+  <h3>T-Deck Plus</h3>
+  <p class="hardware-price">~$77</p>
+  <div style="height:110px;display:flex;align-items:center;justify-content:center;margin:12px 0"><img src="assets/t-deck.svg" style="max-height:100%;max-width:100%;object-fit:contain"></div>
+  <p class="hardware-detail">Keyboard, color screen, GPS and a 2000 mAh battery.</p>
+  <p class="hardware-detail hardware-note">Choose the Meshtastic model. Confirm firmware, antenna option and stock.</p>
+</article><article class="hardware-card">
+  <p class="hardware-kind">Heltec Automation</p>
+  <h3>V4 Expansion Kit</h3>
+  <p class="hardware-price">~$50 - $70</p>
+  <div style="height:110px;display:flex;align-items:center;justify-content:center;margin:12px 0"><img src="assets/v4_expansion_vector.png" style="max-height:100%;max-width:100%;object-fit:contain;filter:drop-shadow(0 10px 15px rgba(0,0,0,0.15))"></div>
+  <p class="hardware-detail">Standalone enclosure with a touchscreen and V4 board.</p>
+  <p class="hardware-detail hardware-note">Ready to deploy, battery not always included.</p>
+</article><article class="hardware-card">
+  <p class="hardware-kind">Elecrow</p>
+  <h3>ThinkNode M9</h3>
+  <p class="hardware-price">~$75</p>
+  <div style="height:110px;display:flex;align-items:center;justify-content:center;margin:12px 0"><img src="assets/thinknode_m7.svg" style="max-height:100%;max-width:100%;object-fit:contain"></div>
+  <p class="hardware-detail">High-end dedicated communicator with integrated keyboard and screen.</p>
+  <p class="hardware-detail hardware-note">Excellent all-in-one messaging device.</p>
+</article></div>
+<p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-neutral-700)">USD · Checked Sep. 9, 2026 · Shipping and tax extra · Prices vary by option.<br>For Arizona, choose US915-compatible hardware and the local AZMSH settings.</p>
+</section>
+
+<section data-label="Boards for DIY Nodes" data-screen-label="16" data-speaker-notes="Prices checked September 9, 2026 in USD. Manufacturer listings exclude shipping and tax. Starting prices may apply to a different warehouse or variant. Choose hardware for US915 in Arizona. A product named repeater does not require the Router device role. Seeed XIAO nRF52840 kit: $13.49. Source: https://www.seeedstudio.com/XIAO-nRF52840-Wio-SX1262-Kit-for-Meshtastic-p-6400.html. Heltec Mesh Node T114: $17.90 to $33.70. Source: https://heltec.org/project/mesh-node-t114/. RAK WisBlock Starter Kit: From $24.99. Source: https://store.rakwireless.com/products/wisblock-meshtastic-starter-kit." class="hardware-slide" style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;justify-content:space-between;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>16</span></div>
 <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0">Boards for DIY Nodes</h2>
 <p style="font-size:30px;line-height:1.4;margin:0">Board prices leave room in the budget for a battery, case and mounting hardware.</p>
 <div class="hardware-grid"><article class="hardware-card">
-  <p class="hardware-kind">Small build</p>
-  <h3>Seeed XIAO nRF52840 kit</h3>
-  <p class="hardware-price">$13.49</p>
-  <p class="hardware-detail">XIAO nRF52840 and Wio-SX1262 radio kit for Meshtastic.</p>
-  <p class="hardware-detail hardware-note">Add a case and power source. Check the kit contents before ordering.</p>
-  <a href="https://www.seeedstudio.com/XIAO-nRF52840-Wio-SX1262-Kit-for-Meshtastic-p-6400.html" target="_blank" rel="noopener noreferrer">Product details and price ↗</a>
+  <p class="hardware-kind">RAKwireless</p>
+  <h3>RAK 1W</h3>
+  <p class="hardware-price">~$39</p>
+  <div style="height:110px;display:flex;align-items:center;justify-content:center;margin:12px 0"><img src="assets/rak3401.svg" style="max-height:100%;max-width:100%;object-fit:contain"></div>
+  <p class="hardware-detail">High power modular base board and radio for custom builds.</p>
+  <p class="hardware-detail hardware-note">Add a battery, enclosure, and modules as needed.</p>
 </article><article class="hardware-card">
-  <p class="hardware-kind">Display options</p>
-  <h3>Heltec Mesh Node T114</h3>
-  <p class="hardware-price">$17.90 to $33.70</p>
-  <p class="hardware-detail">nRF52840 board with optional display, GPS and shell.</p>
-  <p class="hardware-detail hardware-note">Choose Rev. 2 or newer. Battery is not in the default packing list.</p>
-  <a href="https://heltec.org/project/mesh-node-t114/" target="_blank" rel="noopener noreferrer">Product details and price ↗</a>
+  <p class="hardware-kind">Heltec Automation</p>
+  <h3>Mesh Node T096</h3>
+  <p class="hardware-price">~$25 - $35</p>
+  <div style="height:110px;display:flex;align-items:center;justify-content:center;margin:12px 0"><img src="assets/heltec-t096.svg" style="max-height:100%;max-width:100%;object-fit:contain"></div>
+  <p class="hardware-detail">Great standard board for DIY builds with integrated display.</p>
+  <p class="hardware-detail hardware-note">Requires your own case and battery.</p>
 </article><article class="hardware-card">
-  <p class="hardware-kind">Modular build</p>
-  <h3>RAK WisBlock Starter Kit</h3>
-  <p class="hardware-price">From $24.99</p>
-  <p class="hardware-detail">RAK4631 radio, base board, antennas and USB cable. Add modules as needed.</p>
-  <p class="hardware-detail hardware-note">Add a battery and enclosure. Bundles run up to $60.99.</p>
-  <a href="https://store.rakwireless.com/products/wisblock-meshtastic-starter-kit" target="_blank" rel="noopener noreferrer">Product details and price ↗</a>
+  <p class="hardware-kind">BQ Voyage</p>
+  <h3>Station G3</h3>
+  <p class="hardware-price">~$109</p>
+  <div style="height:110px;display:flex;align-items:center;justify-content:center;margin:12px 0"><img src="assets/station-g3.svg" style="max-height:100%;max-width:100%;object-fit:contain"></div>
+  <p class="hardware-detail">High performance board for permanent base station nodes.</p>
+  <p class="hardware-detail hardware-note">Check availability and options.</p>
 </article></div>
 <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-neutral-700)">USD · Checked Sep. 9, 2026 · Shipping and tax extra · Prices vary by option.<br>For Arizona, choose US915-compatible hardware and the local AZMSH settings.</p>
 </section>
 
-<section data-label="Solar and Keyboard Nodes" data-screen-label="15" data-speaker-notes="Prices checked September 9, 2026 in USD. Manufacturer listings exclude shipping and tax. Starting prices may apply to a different warehouse or variant. Choose hardware for US915 in Arizona. A product named repeater does not require the Router device role. RAK Repeater Mini V2: $89.90 to $99.90. Source: https://store.rakwireless.com/products/wismesh-repeater-mini-v2. SenseCAP Solar P1-Pro: $100.99. Source: https://www.seeedstudio.com/SenseCAP-Solar-Node-P1-Pro-for-Meshtastic-LoRa-p-6412.html. LILYGO T-Deck Plus: From $77.16. Source: https://lilygo.cc/en-us/products/t-deck-plus-meshtastic." class="hardware-slide" style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:32px">
-<div style="display:flex;justify-content:space-between;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>15</span></div>
-<h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0">Solar and Keyboard Nodes</h2>
-<p style="font-size:30px;line-height:1.4;margin:0">Two outdoor options and a handheld with its own keyboard.</p>
+<section data-label="Solar Nodes" data-screen-label="17" data-speaker-notes="1W is mandatory for rooftops." class="hardware-slide" style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;justify-content:space-between;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>17</span></div>
+<h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0">Solar Nodes</h2>
+<p style="font-size:30px;line-height:1.4;margin:0">Outdoor nodes for remote or permanent installations.</p>
 <div class="hardware-grid"><article class="hardware-card">
-  <p class="hardware-kind">Solar node</p>
-  <h3>RAK Repeater Mini V2</h3>
-  <p class="hardware-price">$89.90 to $99.90</p>
+  <p class="hardware-kind">PeakMesh</p>
+  <h3>PeakMesh 1W</h3>
+  <p class="hardware-price">~$115 - $120</p>
+  <div style="height:110px;display:flex;align-items:center;justify-content:center;margin:12px 0"><img src="assets/peakmesh_vector.png" style="max-height:100%;max-width:100%;object-fit:contain;filter:drop-shadow(0 10px 15px rgba(0,0,0,0.15))"></div>
+  <p class="hardware-detail">High power 1W (30 dBm) node for rooftop installations.</p>
+  <p class="hardware-detail hardware-note">Highly recommended. 1W minimum is mandatory for all rooftops.</p>
+</article><article class="hardware-card">
+  <p class="hardware-kind">RAKwireless</p>
+  <h3>Repeater Mini V2</h3>
+  <p class="hardware-price">~$89 - $99</p>
+  <div style="height:110px;display:flex;align-items:center;justify-content:center;margin:12px 0"><img src="assets/repeater_mini_vector.png" style="max-height:100%;max-width:100%;object-fit:contain;filter:drop-shadow(0 10px 15px rgba(0,0,0,0.15))"></div>
   <p class="hardware-detail">Assembled solar node with a 3200 mAh battery and IP67 enclosure.</p>
-  <p class="hardware-detail hardware-note">22 dBm and 1 W variants are listed. Check the selected model.</p>
-  <a href="https://store.rakwireless.com/products/wismesh-repeater-mini-v2" target="_blank" rel="noopener noreferrer">Product details and price ↗</a>
+  <p class="hardware-detail hardware-note">Note: This is only 22 dBm, not 1W.</p>
 </article><article class="hardware-card">
-  <p class="hardware-kind">Solar with GPS</p>
-  <h3>SenseCAP Solar P1-Pro</h3>
-  <p class="hardware-price">$100.99</p>
-  <p class="hardware-detail">Solar node with GPS and a built-in battery. Select the Meshtastic version.</p>
-  <p class="hardware-detail hardware-note">The cheaper P1 leaves out GPS and batteries.</p>
-  <a href="https://www.seeedstudio.com/SenseCAP-Solar-Node-P1-Pro-for-Meshtastic-LoRa-p-6412.html" target="_blank" rel="noopener noreferrer">Product details and price ↗</a>
-</article><article class="hardware-card">
-  <p class="hardware-kind">Keyboard handheld</p>
-  <h3>LILYGO T-Deck Plus</h3>
-  <p class="hardware-price">From $77.16</p>
-  <p class="hardware-detail">Keyboard, color screen, GPS and a 2000 mAh battery.</p>
-  <p class="hardware-detail hardware-note">Choose the Meshtastic model. Confirm firmware, antenna option and stock.</p>
-  <a href="https://lilygo.cc/en-us/products/t-deck-plus-meshtastic" target="_blank" rel="noopener noreferrer">Product details and price ↗</a>
+  <p class="hardware-kind">SenseCAP</p>
+  <h3>Solar P1-Pro</h3>
+  <p class="hardware-price">~$100</p>
+  <div style="height:110px;display:flex;align-items:center;justify-content:center;margin:12px 0"><img src="assets/seeed_solar.svg" style="max-height:100%;max-width:100%;object-fit:contain"></div>
+  <p class="hardware-detail">Solar node with GPS and a built-in battery.</p>
+  <p class="hardware-detail hardware-note">Note: This is only 22 dBm, not 1W.</p>
 </article></div>
 <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-neutral-700)">USD · Checked Sep. 9, 2026 · Shipping and tax extra · Prices vary by option.<br>For Arizona, choose US915-compatible hardware and the local AZMSH settings.</p>
 </section>
 
-<section data-label="Testing Your Connection" data-screen-label="16" data-speaker-notes="Send test and wait for tapbacks. The number emoji is how many hops away that operator is, and an asterisk means they heard you directly. If nothing comes back, the fix is usually physical: go outside and get higher." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:38px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>16</span></div>
+<section data-label="Testing Your Connection" data-screen-label="18" data-speaker-notes="Send test and wait for tapbacks. The number emoji is how many hops away that operator is, and an asterisk means they heard you directly. If nothing comes back, the fix is usually physical: go outside and get higher." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:38px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>18</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
     <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Testing Your Connection</h2>
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">Once everything is configured, check whether other nodes can hear you.</p>
@@ -682,7 +941,7 @@
   </div>
 </section>
 
-<section data-label="Close" data-screen-label="17" data-speaker-notes="Invite people to Sunday radio chat at 5 pm on primary MediumFast and Monday voice chat at 7 pm on Discord. Show them where to find help on Discord." style="background:var(--color-accent-2-900);color:var(--color-neutral-100);font-family:var(--font-body);padding:88px 96px 76px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden">
+<section data-label="Close" data-screen-label="19" data-speaker-notes="Invite people to Sunday radio chat at 5 pm on primary MediumFast and Monday voice chat at 7 pm on Discord. Show them where to find help on Discord." style="background:var(--color-accent-2-900);color:var(--color-neutral-100);font-family:var(--font-body);padding:88px 96px 76px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden">
 
   <div style="display:flex;align-items:center;justify-content:space-between;gap:48px;position:relative"><h2 style="font-family:var(--font-heading);font-size:96px;line-height:1.02;margin:0;max-width:1340px;position:relative;color:var(--color-neutral-100)">Join the AZMSH community</h2><div class="badge-rings" style="position:relative;flex-shrink:0;width:280px;height:280px"><span class="badge-ring" aria-hidden="true"></span><span class="badge-ring" aria-hidden="true"></span><span class="badge-ring" aria-hidden="true"></span><img src="assets/azmsh-badge-original.png" alt="Arizona Meshtastic Community badge" width="280" height="280" style="position:relative;z-index:1;width:100%;height:100%;object-fit:contain"></div></div>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;position:relative">
@@ -731,3 +990,16 @@ class Component extends DCLogic {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
