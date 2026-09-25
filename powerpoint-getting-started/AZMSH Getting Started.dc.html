@@ -375,7 +375,7 @@
       <div style="position:relative;height:110px;display:flex;align-items:center;justify-content:center">
         <span style="display:flex;align-items:center;justify-content:center;width:78px;height:78px;border-radius:999px;background:var(--color-accent-2-300);color:var(--color-accent-2-900);position:relative;z-index:1"><span style="display:block;width:38px;height:38px"><i data-lucide="radio"></i></span></span>
       </div>
-      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-2-700)">Not a good relay</div>
+      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-2-700)">Pocket and listen-only nodes</div>
       <h3 style="font-family:var(--font-heading);font-size:36px;margin:0">Client Mute</h3>
       <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-neutral-800)">Sends and receives, never rebroadcasts. Use on any node that is not a good candidate to relay, like a pocket tag or an MQTT uplink in a closet.</p>
     </div>
@@ -408,7 +408,7 @@
       </div>
       <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-800)">Hilltops and towers only</div>
       <h3 style="font-family:var(--font-heading);font-size:36px;margin:0;color:var(--color-accent-900)">Router / Router Late</h3>
-      <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-accent-900)">Built for permanent, high-elevation, line-of-sight sites. <strong>These roles can actively damage and harm the mesh</strong> if used in the wrong place (like a house or car), causing massive congestion. Ask on Discord before switching.</p>
+      <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-accent-900)">Relay every single message. Router will cut in line and rebroadcast before a Client gets a chance to. A poorly placed Router will degrade the mesh by cancelling other Client nodes. Router Late is useful to fill in gaps like those from terrain where a full router isn't needed.</p>
     </div>
   </div>
   <p style="font-size:27px;line-height:1.45;margin:0;color:var(--color-neutral-700)">The three client roles all rebroadcast sensibly and are safe to pick between. Router is the only one that can damage the mesh if it is used in the wrong place.</p>
@@ -818,3 +818,4 @@
 </x-dc>
 </body>
 </html>
+
