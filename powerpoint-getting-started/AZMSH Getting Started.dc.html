@@ -106,71 +106,25 @@
   </div>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;flex:1">
     <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:44px;display:flex;flex-direction:column;gap:20px">
-      <span style="display:block;width:64px;height:64px;color:var(--color-accent-700)"><i data-lucide="share-2"></i></span>
-      <h3 style="font-family:var(--font-heading);font-size:40px;margin:0">Decentralized Mesh</h3>
-      <p style="font-size:28px;line-height:1.45;margin:0;color:var(--color-neutral-800)">No dedicated router or central server required. Every node in the network can seamlessly relay traffic for the entire group, meaning there is no single point of failure.</p>
-    </div>
-    <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:44px;display:flex;flex-direction:column;gap:20px">
       <span style="display:block;width:64px;height:64px;color:var(--color-accent-2-700)"><i data-lucide="message-square"></i></span>
       <h3 style="font-family:var(--font-heading);font-size:40px;margin:0">Off-Grid Messaging</h3>
-      <p style="font-size:28px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Send text messages and share GPS locations without relying on cellular towers, Wi-Fi, or the internet. The network is entirely self-sufficient.</p>
+      <p style="font-size:24px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Share text messages, positions, map waypoints, telemetry, sensor data, and more &mdash; just not data intensive items like voice, pictures, or video. Does not rely on Wi-Fi, cell networks, or internet. If a message makes it from Nogales to Surprise, it did it over RF!</p>
+    </div>
+    <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:44px;display:flex;flex-direction:column;gap:20px">
+      <span style="display:block;width:64px;height:64px;color:var(--color-accent-700)"><i data-lucide="share-2"></i></span>
+      <h3 style="font-family:var(--font-heading);font-size:40px;margin:0">Decentralized Mesh</h3>
+      <p style="font-size:24px;line-height:1.45;margin:0;color:var(--color-neutral-800)">No routing tables or central servers required. Each message is handled independently and any node that hears it passes it along. No single points of failure and only minimal coordination required.</p>
     </div>
     <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:44px;display:flex;flex-direction:column;gap:20px">
       <span style="display:block;width:64px;height:64px;color:var(--color-accent-700)"><i data-lucide="lock"></i></span>
       <h3 style="font-family:var(--font-heading);font-size:40px;margin:0">Encrypted</h3>
-      <p style="font-size:28px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Unlike ham radio, messages are encrypted per channel. Only nodes holding the matching AES256 key can read them, ensuring completely private group chats.</p>
+      <p style="font-size:21px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Unlike packet radio modes, Meshtastic is encrypted by default. Public channels use a simple shared key. Private channels can be created where only nodes with the key can read the messages. Direct Messages are encrypted using both nodes' keys. Even if your traffic is encrypted, the rest of the mesh will still relay your messages!</p>
     </div>
   </div>
 </section>
 
-<section data-label="Meshtastic vs APRS" data-screen-label="03" data-speaker-notes="For our amateur radio operators, Meshtastic looks a lot like APRS. Both do location tracking and short text messages. But Meshtastic uses the license-free 915 MHz ISM band, supports encryption for private channels, uses LoRa instead of AFSK, and relies on a true mesh topology instead of digipeaters. And the hardware is significantly cheaper." style="background:var(--color-accent-2-900);color:var(--color-neutral-100);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
+<section data-label="Why Use Meshtastic" data-screen-label="03" data-speaker-notes="Hams can finally hand a radio to their unlicensed spouse, kids, or friends to keep in touch while camping or during a grid-down scenario." style="background:var(--color-accent-2-900);color:var(--color-neutral-100);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
   <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-2-300)"><span>AZMSH &mdash; Arizona Meshtastic Community</span><span>02</span></div>
-  <div style="display:flex;align-items:flex-end;gap:64px">
-    <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Meshtastic vs. APRS</h2>
-    <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-accent-2-100)">A modern parallel to the Automatic Packet Reporting System.</p>
-  </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:20px">
-    <div style="background:rgba(255,255,255,0.1);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:12px">
-      <h3 style="font-family:var(--font-heading);font-size:32px;margin:0;color:var(--color-accent-2-300)">Licensing &amp; Band</h3>
-      <p style="font-size:24px;line-height:1.4;margin:0"><strong>APRS:</strong> Requires a Part 97 Ham License (VHF/UHF).<br><strong>Meshtastic:</strong> Operates on the Part 15 License-Free ISM band (915 MHz in the US).</p>
-    </div>
-    <div style="background:rgba(255,255,255,0.1);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:12px">
-      <h3 style="font-family:var(--font-heading);font-size:32px;margin:0;color:var(--color-accent-2-300)">Privacy &amp; Encryption</h3>
-      <p style="font-size:24px;line-height:1.4;margin:0"><strong>APRS:</strong> Encryption is strictly prohibited by law.<br><strong>Meshtastic:</strong> Fully encrypted (AES256) allowing private group and direct messaging.</p>
-    </div>
-    <div style="background:rgba(255,255,255,0.1);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:12px">
-      <h3 style="font-family:var(--font-heading);font-size:32px;margin:0;color:var(--color-accent-2-300)">Topology</h3>
-      <p style="font-size:24px;line-height:1.4;margin:0"><strong>APRS:</strong> Relies on Digipeaters and IGates.<br><strong>Meshtastic:</strong> True Mesh topology; every node dynamically routes traffic for the group.</p>
-    </div>
-    <div style="background:rgba(255,255,255,0.1);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:12px">
-      <h3 style="font-family:var(--font-heading);font-size:32px;margin:0;color:var(--color-accent-2-300)">Power &amp; Modulation</h3>
-      <p style="font-size:24px;line-height:1.4;margin:0"><strong>APRS:</strong> 1200 baud AFSK (often 5W to 50W radios).<br><strong>Meshtastic:</strong> LoRa spread spectrum (extremely low power, typically 0.1W to 1W).</p>
-    </div>
-  </div>
-</section>
-
-<section data-label="Like FT8 for Text Messaging" data-screen-label="04" data-speaker-notes="Hams will know FT8 pulls signals out of the noise floor. LoRa does the same thing for data. It can decode signals down to -20 dB SNR and -130 dBm sensitivity." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH &mdash; Arizona Meshtastic Community</span><span>03</span></div>
-  <div style="display:flex;align-items:flex-end;gap:64px">
-    <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Like FT8 for Text Messaging</h2>
-    <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">LoRa (Long Range) modulation pulls digital signals out of the noise floor.</p>
-  </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;flex:1">
-    <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:56px;display:flex;flex-direction:column;gap:24px">
-      <span style="display:block;width:64px;height:64px;color:var(--color-accent-700)"><i data-lucide="activity"></i></span>
-      <h3 style="font-family:var(--font-heading);font-size:44px;margin:0">Massive Link Budget</h3>
-      <p style="font-size:30px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Like FT8, LoRa can decode signals below the noise floor (-20 dB SNR) with receiver sensitivity down to -130 dBm. This guarantees reliable data links even when voice communication is completely impossible.</p>
-    </div>
-    <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:56px;display:flex;flex-direction:column;gap:24px">
-      <span style="display:block;width:64px;height:64px;color:var(--color-accent-2-700)"><i data-lucide="gauge"></i></span>
-      <h3 style="font-family:var(--font-heading);font-size:44px;margin:0">Narrowband Duty Cycle</h3>
-      <p style="font-size:30px;line-height:1.45;margin:0;color:var(--color-neutral-800)">It is slow. The network is strictly designed for short text packets and automated telemetry. This is a highly efficient narrowband digital mode, not a tool for streaming voice, video, or internet traffic.</p>
-    </div>
-  </div>
-</section>
-
-<section data-label="Why Use Meshtastic" data-screen-label="05" data-speaker-notes="Hams can finally hand a radio to their unlicensed spouse, kids, or friends to keep in touch while camping or during a grid-down scenario." style="background:var(--color-accent-2-900);color:var(--color-neutral-100);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-2-300)"><span>AZMSH &mdash; Arizona Meshtastic Community</span><span>04</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
     <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Why Use Meshtastic?</h2>
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-accent-2-100)">Bringing off-grid comms to the masses.</p>
@@ -191,8 +145,8 @@
   </div>
 </section>
 
-<section data-label="Ham Mode" data-screen-label="06" data-speaker-notes="Ham mode is an option in the app, but we don't recommend it. Because it strips encryption and usually requires 433 MHz hardware, you end up on a completely isolated mesh by yourself." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH &mdash; Arizona Meshtastic Community</span><span>05</span></div>
+<section data-label="Ham Mode" data-screen-label="04" data-speaker-notes="Ham mode is an option in the app, but we don't recommend it. Because it strips encryption and usually requires 433 MHz hardware, you end up on a completely isolated mesh by yourself." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH &mdash; Arizona Meshtastic Community</span><span>03</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
     <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">What About Ham Mode?</h2>
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">A powerful setting you will probably never use.</p>
@@ -216,8 +170,33 @@
   </div>
 </section>
 
-<section data-label="Recommended Hardware" data-screen-label="07" data-speaker-notes="Explain what each radio does. Start with a handheld if that fits the budget. A high home node can improve coverage." style="background:var(--color-accent-2-900);color:var(--color-neutral-100);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-2-300)"><span>AZMSH &mdash; Arizona Meshtastic Community</span><span>06</span></div>
+<section data-label="Technical Overview" data-screen-label="05" data-speaker-notes="This is a quick look under the hood at how Meshtastic handles packets at the physical and routing layer." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH &mdash; Arizona Meshtastic Community</span><span>04</span></div>
+  <div style="display:flex;align-items:flex-end;gap:64px">
+    <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Technical Overview</h2>
+    <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">A look under the hood at the physical and routing layers.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;flex:1">
+    <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:44px;display:flex;flex-direction:column;gap:20px">
+      <span style="display:block;width:64px;height:64px;color:var(--color-accent-700)"><i data-lucide="activity"></i></span>
+      <h3 style="font-family:var(--font-heading);font-size:40px;margin:0">Chirp Spread Spectrum</h3>
+      <p style="font-size:28px;line-height:1.45;margin:0;color:var(--color-neutral-800)">At the physical layer, LoRa encodes symbols as frequency-shifted chirps over time. A "chirp" sweeps across the bandwidth, allowing the receiver to decode signals even when they are deeply buried in the noise floor.</p>
+    </div>
+    <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:44px;display:flex;flex-direction:column;gap:20px">
+      <span style="display:block;width:64px;height:64px;color:var(--color-accent-2-700)"><i data-lucide="route"></i></span>
+      <h3 style="font-family:var(--font-heading);font-size:40px;margin:0">Flood Routing</h3>
+      <p style="font-size:28px;line-height:1.45;margin:0;color:var(--color-neutral-800)">When a radio captures a packet, it checks to see if it has heard that message before. If it hasn't, it rebroadcasts it. If it has, it drops it. This creates a resilient, self-healing, multi-path network.</p>
+    </div>
+    <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:44px;display:flex;flex-direction:column;gap:20px">
+      <span style="display:block;width:64px;height:64px;color:var(--color-accent-700)"><i data-lucide="arrow-down-to-dot"></i></span>
+      <h3 style="font-family:var(--font-heading);font-size:40px;margin:0">Hop Limits</h3>
+      <p style="font-size:28px;line-height:1.45;margin:0;color:var(--color-neutral-800)">For each message a radio rebroadcasts, it marks the "hop limit" down by one. When a radio receives a packet with a hop limit of zero, it stops rebroadcasting. This strictly prevents infinite routing loops.</p>
+    </div>
+  </div>
+</section>
+
+<section data-label="Recommended Hardware" data-screen-label="06" data-speaker-notes="Explain what each radio does. Start with a handheld if that fits the budget. A high home node can improve coverage." style="background:var(--color-accent-2-900);color:var(--color-neutral-100);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-2-300)"><span>AZMSH &mdash; Arizona Meshtastic Community</span><span>05</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
     <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">What You Need</h2>
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-accent-2-100)">Buy two radios minimum so you can test.</p>
@@ -236,8 +215,8 @@
   </div>
 </section>
 
-<section data-label="Get the Most Out of Your Hardware" data-screen-label="08" data-speaker-notes="Antennas are important, but placement is even more important." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH &mdash; Arizona Meshtastic Community</span><span>07</span></div>
+<section data-label="Get the Most Out of Your Hardware" data-screen-label="07" data-speaker-notes="Antennas are important, but placement is even more important." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH &mdash; Arizona Meshtastic Community</span><span>06</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
     <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Maximize Your Hardware</h2>
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">A few simple upgrades make a massive difference in range.</p>
@@ -261,8 +240,8 @@
   </div>
 </section>
 
-<section data-label="Connecting in Five Steps" data-screen-label="09" data-speaker-notes="Walk through the five steps quickly. Emphasize step one: back up your config before flashing, because a firmware update can wipe your private key and you will come back as a brand new node. Chrome is required for the web flasher." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:44px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>08</span></div>
+<section data-label="Connecting in Five Steps" data-screen-label="08" data-speaker-notes="Walk through the five steps quickly. Emphasize step one: back up your config before flashing, because a firmware update can wipe your private key and you will come back as a brand new node. Chrome is required for the web flasher." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:44px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>07</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
     <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Connecting in Five Steps</h2>
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">Budget about twenty minutes, most of it spent waiting on the firmware flash.</p>
@@ -296,8 +275,8 @@
   </div>
 </section>
 
-<section data-label="The Community" data-screen-label="10" data-speaker-notes="AZMSH is Arizona’s Meshtastic community. Explain the regional settings: metro Phoenix and Tucson run community-tuned settings, and everywhere else stays on Meshtastic defaults. If you set metro values out in Prescott you will hear nothing." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>09</span></div>
+<section data-label="The Community" data-screen-label="09" data-speaker-notes="AZMSH is Arizona’s Meshtastic community. Explain the regional settings: metro Phoenix and Tucson run community-tuned settings, and everywhere else stays on Meshtastic defaults. If you set metro values out in Prescott you will hear nothing." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>08</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
     <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">The Arizona Meshtastic Community</h2>
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">AZMSH is Arizona’s Meshtastic community. Phoenix and Tucson operators coordinate shared settings here so their radios can hear each other.</p>
@@ -328,8 +307,8 @@
   </div>
 </section>
 
-<section data-label="How the Mesh Works" data-screen-label="11" data-speaker-notes="Start with presets, channels and hop limits. Presets are the radio settings that let two nodes hear each other at all. Channels group messages by name and encryption key. Hop limit is how far a message is allowed to travel before it stops. Walk the animation left to right: the sender transmits with 3, relays transmit with 2, 1, then 0. The final receiver does not rebroadcast a packet received with 0. AZMSH suggests starting at 3 and staying at or under 5." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>10</span></div>
+<section data-label="How the Mesh Works" data-screen-label="10" data-speaker-notes="Start with presets, channels and hop limits. Presets are the radio settings that let two nodes hear each other at all. Channels group messages by name and encryption key. Hop limit is how far a message is allowed to travel before it stops. Walk the animation left to right: the sender transmits with 3, relays transmit with 2, 1, then 0. The final receiver does not rebroadcast a packet received with 0. AZMSH suggests starting at 3 and staying at or under 5." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>09</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
     <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">How the Mesh Works</h2>
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">Three settings decide whether your node can talk to anyone: the preset, the channel, and the hop limit.</p>
@@ -365,8 +344,8 @@
   </div>
 </section>
 
-<section data-label="Channels to Add" data-screen-label="12" data-speaker-notes="These keys are public so anyone can join the community channels. Point out that names are case-sensitive, and iOS makes you set the key size yourself. Android takes the size from whatever you paste." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:38px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>11</span></div>
+<section data-label="Channels to Add" data-screen-label="11" data-speaker-notes="These keys are public so anyone can join the community channels. Point out that names are case-sensitive, and iOS makes you set the key size yourself. Android takes the size from whatever you paste." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:38px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>10</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
     <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Channels to Add</h2>
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">Add these in the app's Channels editor. Names are case-sensitive. Each key below ends with two equals signs (no spaces).</p>
@@ -405,8 +384,8 @@
   <p style="font-size:27px;line-height:1.45;margin:0;color:var(--color-neutral-700)">These keys are public. Anyone with the channel settings can read messages sent there.</p>
 </section>
 
-<section data-label="Node Roles" data-screen-label="13" data-speaker-notes="Meshtastic's own guidance is to stay on one of the three client roles. Use the radio icons to explain the roles: mute never repeats, client repeats for its neighbors, client base does the same but jumps the queue for the nodes you favorite on it, and router floods in every direction. Discuss router placement before anyone changes that setting." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:36px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>12</span></div>
+<section data-label="Node Roles" data-screen-label="12" data-speaker-notes="Meshtastic's own guidance is to stay on one of the three client roles. Use the radio icons to explain the roles: mute never repeats, client repeats for its neighbors, client base does the same but jumps the queue for the nodes you favorite on it, and router floods in every direction. Discuss router placement before anyone changes that setting." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:36px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>11</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
     <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Node Roles</h2>
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">Meshtastic's own guidance, and ours: nearly every node on the mesh should be Client, Client Mute or Client Base.</p>
@@ -455,8 +434,8 @@
   <p style="font-size:27px;line-height:1.45;margin:0;color:var(--color-neutral-700)">The three client roles all rebroadcast sensibly and are safe to pick between. Router is the only one that can damage the mesh if it is used in the wrong place.</p>
 </section>
 
-<section data-label="Role Timing &amp; Routing" data-screen-label="14" data-speaker-notes="This shows how roles affect routing timing. A message leaves the sender. A Client Mute and Client Base hear it; Mute ignores, Base queues. Base broadcasts, 3 Clients hear. Furthest Client goes first due to timing, cancelling the others. Then a Router hears it and goes immediately." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH &mdash; Arizona Meshtastic Community</span><span>13</span></div>
+<section data-label="Role Timing &amp; Routing" data-screen-label="13" data-speaker-notes="This shows how roles affect routing timing. A message leaves the sender. A Client Mute and Client Base hear it; Mute ignores, Base queues. Base broadcasts, 3 Clients hear. Furthest Client goes first due to timing, cancelling the others. Then a Router hears it and goes immediately." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH &mdash; Arizona Meshtastic Community</span><span>12</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
     <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Role Timing &amp; Routing</h2>
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">Roles affect <em>when</em> a node rebroadcasts, preventing collisions.</p>
@@ -710,8 +689,8 @@
 
 </section>
 
-<section data-label="Broadcast Intervals" data-screen-label="15" data-speaker-notes="Explain that frequent broadcasts use airtime other nodes need for messages. Mobile and stationary get different numbers. Refer to the Recommended Settings page for details, including Neighbor Info." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:38px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>14</span></div>
+<section data-label="Broadcast Intervals" data-screen-label="14" data-speaker-notes="Explain that frequent broadcasts use airtime other nodes need for messages. Mobile and stationary get different numbers. Refer to the Recommended Settings page for details, including Neighbor Info." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:38px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>13</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
     <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Broadcast Intervals</h2>
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">Airtime is shared by every node on the channel. These intervals keep it clear enough for messages to get through.</p>
@@ -752,8 +731,8 @@
   <p style="font-size:27px;line-height:1.45;margin:0;color:var(--color-neutral-700)">Set Neighbor Info in the iOS or Android app, web client or CLI. See Recommended Settings at azmsh.net for details.</p>
 </section>
 
-<section data-label="MQTT &amp; Diagnostics" data-screen-label="16" data-speaker-notes="Explain the difference between OK to MQTT and an Uplink. Downlink stays off." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:38px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>15</span></div>
+<section data-label="MQTT &amp; Diagnostics" data-screen-label="15" data-speaker-notes="Explain the difference between OK to MQTT and an Uplink. Downlink stays off." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:38px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>14</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
     <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">MQTT and Diagnostics</h2>
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">AZMSH runs our own MQTT broker to power community maps and metrics dashboards. To participate, you must understand two distinct settings.</p>
@@ -782,8 +761,8 @@
   </div>
 </section>
 
-<section data-label="Testing Your Connection" data-screen-label="17" data-speaker-notes="Send test and wait for tapbacks. The number emoji is how many hops away that operator is, and an asterisk means they heard you directly. If nothing comes back, the fix is usually physical: go outside and get higher." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:38px">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>16</span></div>
+<section data-label="Testing Your Connection" data-screen-label="16" data-speaker-notes="Send test and wait for tapbacks. The number emoji is how many hops away that operator is, and an asterisk means they heard you directly. If nothing comes back, the fix is usually physical: go outside and get higher." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:38px">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH · Arizona Meshtastic Community</span><span>15</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
     <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Testing Your Connection</h2>
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">Once everything is configured, check whether other nodes can hear you.</p>
@@ -833,7 +812,7 @@
   </div>
 </section>
 
-<section data-label="Close" data-screen-label="18" data-speaker-notes="Invite people to Sunday radio chat at 5 pm on primary MediumFast and Monday voice chat at 7 pm on Discord. Show them where to find help on Discord." style="background:var(--color-accent-2-900);color:var(--color-neutral-100);font-family:var(--font-body);padding:88px 96px 76px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden">
+<section data-label="Close" data-screen-label="17" data-speaker-notes="Invite people to Sunday radio chat at 5 pm on primary MediumFast and Monday voice chat at 7 pm on Discord. Show them where to find help on Discord." style="background:var(--color-accent-2-900);color:var(--color-neutral-100);font-family:var(--font-body);padding:88px 96px 76px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden">
 
   <div style="display:flex;align-items:center;justify-content:space-between;gap:48px;position:relative"><h2 style="font-family:var(--font-heading);font-size:96px;line-height:1.02;margin:0;max-width:1340px;position:relative;color:var(--color-neutral-100)">Join the AZMSH community</h2><div class="badge-rings" style="position:relative;flex-shrink:0;width:280px;height:280px"><span class="badge-ring" aria-hidden="true"></span><span class="badge-ring" aria-hidden="true"></span><span class="badge-ring" aria-hidden="true"></span><img src="assets/azmsh-badge-original.png" alt="Arizona Meshtastic Community badge" width="280" height="280" style="position:relative;z-index:1;width:100%;height:100%;object-fit:contain"></div></div>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;position:relative">
@@ -859,4 +838,3 @@
 </x-dc>
 </body>
 </html>
-
