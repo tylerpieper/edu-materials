@@ -201,17 +201,17 @@
     <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:44px;display:flex;flex-direction:column;gap:20px">
       <span style="display:block;width:64px;height:64px;color:var(--color-accent-700)"><i data-lucide="radio-tower"></i></span>
       <h3 style="font-family:var(--font-heading);font-size:40px;margin:0">Part 97 Rules</h3>
-      <p style="font-size:28px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Ham Mode switches the radio to operate under amateur radio rules, allowing you to use high-gain antennas and much higher transmit power without Part 15 EIRP limits.</p>
+      <p style="font-size:28px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Ham mode tells the firmware you are going to operate outside the Part 15 limits. This allows you to both operate at higher power within the 33cm ISM band as well as on other frequencies like 70cm.</p>
     </div>
     <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:44px;display:flex;flex-direction:column;gap:20px">
       <span style="display:block;width:64px;height:64px;color:var(--color-accent-2-700)"><i data-lucide="unlock"></i></span>
       <h3 style="font-family:var(--font-heading);font-size:40px;margin:0">No Encryption</h3>
-      <p style="font-size:28px;line-height:1.45;margin:0;color:var(--color-neutral-800)">By law, amateur radio cannot be encrypted. Enabling Ham Mode instantly disables AES256 encryption, meaning your family cannot have private group chats.</p>
+      <p style="font-size:28px;line-height:1.45;margin:0;color:var(--color-neutral-800)">The tradeoff is that you are no longer able to use any encryption, including the "barely encrypted" AQ== key used on the public channels. Enabling ham mode disables encryption in firmware, meaning direct messages are as public as channel messages &mdash; everyone can read everything.</p>
     </div>
     <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:44px;display:flex;flex-direction:column;gap:20px">
       <span style="display:block;width:64px;height:64px;color:var(--color-accent-700)"><i data-lucide="split"></i></span>
       <h3 style="font-family:var(--font-heading);font-size:40px;margin:0">A Separate Mesh</h3>
-      <p style="font-size:28px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Almost no one uses it. The 915 MHz public mesh is so huge that the extra power of Ham Mode (which often requires different 433 MHz hardware) is rarely worth being isolated on a completely separate network.</p>
+      <p style="font-size:28px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Due to encryption being disabled, a node in ham mode will not be able to communicate with nodes not in ham mode &mdash; ham mode is its own separate mesh. The vast majority of Meshtastic users are unlicensed &mdash; so very few hams use Meshtastic in ham mode.</p>
     </div>
   </div>
 </section>
@@ -859,3 +859,4 @@
 </x-dc>
 </body>
 </html>
+
