@@ -489,6 +489,7 @@
       <!-- Solid gray lines for all connections -->
       <line x1="100" y1="250" x2="100" y2="400" stroke="#9ca3af" stroke-width="2.5" />
       <line x1="100" y1="250" x2="250" y2="325" stroke="#9ca3af" stroke-width="2.5" />
+      <line x1="250" y1="325" x2="100" y2="400" stroke="#9ca3af" stroke-width="2.5" />
       
       <line x1="250" y1="325" x2="450" y2="150" stroke="#9ca3af" stroke-width="2.5" />
       <line x1="250" y1="325" x2="450" y2="275" stroke="#9ca3af" stroke-width="2.5" />
@@ -499,6 +500,8 @@
       <line x1="600" y1="375" x2="750" y2="150" stroke="#9ca3af" stroke-width="2.5" />
       <line x1="600" y1="375" x2="750" y2="300" stroke="#9ca3af" stroke-width="2.5" />
   
+      <line x1="750" y1="150" x2="450" y2="150" stroke="#9ca3af" stroke-width="2.5" />
+      <line x1="750" y1="150" x2="450" y2="275" stroke="#9ca3af" stroke-width="2.5" />
       <line x1="750" y1="150" x2="750" y2="300" stroke="#9ca3af" stroke-width="2.5" />
       <line x1="750" y1="150" x2="920" y2="225" stroke="#9ca3af" stroke-width="2.5" />
   
@@ -512,18 +515,27 @@
       <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 250 325 L 450 275'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
       <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 250 325 L 600 375'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
       <circle cx="250" cy="325" fill="none" stroke="#10b981" stroke-width="2.5" style="animation: mtopo-ping-glow 12s infinite 2.5s;" />
+      <!-- Wave 2 Dupes (Orange) -->
+      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 250 325 L 100 250'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
+      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 250 325 L 100 400'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
   
       <!-- Wave 3: Far Client (t=5.5s) -->
-      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 450 150'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
-      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 450 275'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
       <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 750 150'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
       <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 750 300'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
       <circle cx="600" cy="375" fill="none" stroke="#10b981" stroke-width="2.5" style="animation: mtopo-ping-glow 12s infinite 5.5s;" />
+      <!-- Wave 3 Dupes (Orange) -->
+      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 250 325'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
+      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 450 150'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
+      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 450 275'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
   
       <!-- Wave 4: Router (t=7.5s) -->
-      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 750 300'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
       <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 920 225'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
       <circle cx="750" cy="150" fill="none" stroke="#10b981" stroke-width="2.5" style="animation: mtopo-ping-glow 12s infinite 7.5s;" />
+      <!-- Wave 4 Dupes (Orange) -->
+      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 450 150'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
+      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 450 275'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
+      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 600 375'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
+      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 750 300'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
     </svg>
     
     <div class="mtopo-node" style="left: 10%; top: 50%;">
@@ -847,6 +859,7 @@
 </x-dc>
 </body>
 </html>
+
 
 
 
