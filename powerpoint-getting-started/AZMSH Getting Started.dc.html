@@ -318,7 +318,7 @@
       <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-accent-900)">Relay every single message. Router will cut in line and rebroadcast before a Client gets a chance to. A poorly placed Router will degrade the mesh by cancelling other Client nodes. Router Late is useful to fill in gaps like those from terrain where a full router isn't needed.</p>
     </div>
   </div>
-  <p style="font-size:27px;line-height:1.45;margin:0;color:var(--color-neutral-700)">The three client roles all rebroadcast sensibly and are safe to pick between. Router is the only one that can damage the mesh if it is used in the wrong place.</p>
+  <p style="font-size:27px;line-height:1.45;margin:0;color:var(--color-neutral-700)">The three client roles all have a place on your nodes and you can confidently use any of them that make sense for your application. Router Late and especially Router can actually cause problems for other mesh users if not applied correctly. If you aren't sure, ask in Discord!</p>
 </section>
 
 <section data-label="Example Message Propagation" data-screen-label="09" data-speaker-notes="This shows how roles affect routing timing. A message leaves the sender. A Client Mute and Client Base hear it; Mute ignores, Base queues. Base broadcasts, 3 Clients hear. Furthest Client goes first due to timing, cancelling the others. Then a Router hears it and goes immediately." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
@@ -847,4 +847,5 @@
 </x-dc>
 </body>
 </html>
+
 
