@@ -328,149 +328,173 @@
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">Roles affect if and when a node rebroadcasts a message, minimizing unnecessary airtime.</p>
   </div>
   <style>
-  @keyframes mtopo-ping-travel {
-    0% { offset-distance: 0%; opacity: 1; }
-    12.5% { offset-distance: 100%; opacity: 1; }
-    12.6% { opacity: 0; }
-    100% { opacity: 0; }
-  }
-  @keyframes mtopo-ping-glow {
-    0% { r: 1; opacity: 0.8; }
-    6.25% { r: 4; opacity: 0.4; }
-    12.5% { r: 7; opacity: 0; }
-    100% { opacity: 0; }
-  }
+    @keyframes mtopo-ping-travel {
+      0% { offset-distance: 0%; opacity: 1; }
+      12.5% { offset-distance: 100%; opacity: 1; }
+      12.6% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes mtopo-ping-glow {
+      0% { r: 1; opacity: 0.8; }
+      6.25% { r: 4; opacity: 0.4; }
+      12.5% { r: 7; opacity: 0; }
+      100% { opacity: 0; }
+    }
 
-  @keyframes st-sender {
-    0%, 12.5% { opacity: 1; transform: translateY(0); background: #10b981; }
-    15%, 100% { opacity: 0; transform: translateY(-10px); background: #10b981; }
-  }
-  @keyframes ct-sender { 0%, 100% { content: "Sent"; } }
+    .mtopo-node {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: translate(-50%, -50%);
+      z-index: 20;
+    }
+    .mtopo-device {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      position: relative;
+      z-index: 10;
+      filter: drop-shadow(0 6px 8px rgba(0,0,0,0.15));
+    }
+    .mtopo-label {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-neutral-800);
+      margin-top: 6px;
+      white-space: nowrap;
+      background: rgba(255,255,255,0.85);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .mtopo-status {
+      position: absolute;
+      top: -30px;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 12px;
+      color: white;
+      white-space: nowrap;
+      opacity: 0;
+    }
+    
+    .bg-green { background: #10b981; }
+    .bg-orange { background: #f97316; }
+    .bg-gray { background: #6b7280; }
+    .bg-blue { background: #3b82f6; }
 
-  @keyframes st-mute1 {
-    0%, 11% { opacity: 0; transform: translateY(10px); }
-    12.5%, 30% { opacity: 1; transform: translateY(0); background: #6b7280; }
-    35%, 100% { opacity: 0; transform: translateY(-10px); background: #6b7280; }
-  }
-  @keyframes ct-mute1 { 0%, 100% { content: "Won't Relay"; } }
+    @keyframes st-0-a {
+      0%, 12.5% { opacity: 1; transform: translateY(0); }
+      14%, 100% { opacity: 0; transform: translateY(-10px); }
+    }
+    @keyframes st-0-b {
+      0%, 32% { opacity: 0; transform: translateY(10px); }
+      33.3%, 48% { opacity: 1; transform: translateY(0); }
+      50%, 100% { opacity: 0; transform: translateY(-10px); }
+    }
+    @keyframes st-1-a {
+      0%, 11% { opacity: 0; transform: translateY(10px); }
+      12.5%, 30% { opacity: 1; transform: translateY(0); }
+      32%, 100% { opacity: 0; transform: translateY(-10px); }
+    }
+    @keyframes st-1-b {
+      0%, 32% { opacity: 0; transform: translateY(10px); }
+      33.3%, 48% { opacity: 1; transform: translateY(0); }
+      50%, 100% { opacity: 0; transform: translateY(-10px); }
+    }
+    @keyframes st-2-a {
+      0%, 11% { opacity: 0; transform: translateY(10px); }
+      12.5%, 20.7% { opacity: 1; transform: translateY(0); }
+      20.8%, 100% { opacity: 0; transform: translateY(0); }
+    }
+    @keyframes st-2-b {
+      0%, 20.7% { opacity: 0; transform: translateY(10px); }
+      20.8%, 33.3% { opacity: 1; transform: translateY(0); }
+      35%, 100% { opacity: 0; transform: translateY(-10px); }
+    }
+    @keyframes st-2-c {
+      0%, 57% { opacity: 0; transform: translateY(10px); }
+      58.3%, 73% { opacity: 1; transform: translateY(0); }
+      75%, 100% { opacity: 0; transform: translateY(-10px); }
+    }
+    @keyframes st-3-a {
+      0%, 32% { opacity: 0; transform: translateY(10px); }
+      33.3%, 58.2% { opacity: 1; transform: translateY(0); }
+      58.3%, 100% { opacity: 0; transform: translateY(0); }
+    }
+    @keyframes st-3-b {
+      0%, 58.2% { opacity: 0; transform: translateY(10px); }
+      58.3%, 73% { opacity: 1; transform: translateY(0); }
+      74%, 100% { opacity: 0; transform: translateY(-10px); }
+    }
+    @keyframes st-3-c {
+      0%, 74% { opacity: 0; transform: translateY(10px); }
+      75%, 88% { opacity: 1; transform: translateY(0); }
+      90%, 100% { opacity: 0; transform: translateY(-10px); }
+    }
+    @keyframes st-5-a {
+      0%, 32% { opacity: 0; transform: translateY(10px); }
+      33.3%, 45.7% { opacity: 1; transform: translateY(0); }
+      45.8%, 100% { opacity: 0; transform: translateY(0); }
+    }
+    @keyframes st-5-b {
+      0%, 45.7% { opacity: 0; transform: translateY(10px); }
+      45.8%, 58.3% { opacity: 1; transform: translateY(0); }
+      60%, 100% { opacity: 0; transform: translateY(-10px); }
+    }
+    @keyframes st-5-c {
+      0%, 74% { opacity: 0; transform: translateY(10px); }
+      75%, 88% { opacity: 1; transform: translateY(0); }
+      90%, 100% { opacity: 0; transform: translateY(-10px); }
+    }
+    @keyframes st-8-a {
+      0%, 57% { opacity: 0; transform: translateY(10px); }
+      58.3%, 62.4% { opacity: 1; transform: translateY(0); }
+      62.5%, 100% { opacity: 0; transform: translateY(0); }
+    }
+    @keyframes st-8-b {
+      0%, 62.4% { opacity: 0; transform: translateY(10px); }
+      62.5%, 75% { opacity: 1; transform: translateY(0); }
+      77%, 100% { opacity: 0; transform: translateY(-10px); }
+    }
+    @keyframes st-9-a {
+      0%, 57% { opacity: 0; transform: translateY(10px); }
+      58.3%, 74.9% { opacity: 1; transform: translateY(0); }
+      75%, 100% { opacity: 0; transform: translateY(0); }
+    }
+    @keyframes st-9-b {
+      0%, 74.9% { opacity: 0; transform: translateY(10px); }
+      75%, 88% { opacity: 1; transform: translateY(0); }
+      90%, 100% { opacity: 0; transform: translateY(-10px); }
+    }
+    @keyframes st-10-a {
+      0%, 73% { opacity: 0; transform: translateY(10px); }
+      75%, 90% { opacity: 1; transform: translateY(0); }
+      92%, 100% { opacity: 0; transform: translateY(-10px); }
+    }
 
-  @keyframes st-base {
-    0%, 11% { opacity: 0; transform: translateY(10px); }
-    12.5%, 20.7% { opacity: 1; transform: translateY(0); background: #3b82f6; }
-    20.8%, 35% { opacity: 1; transform: translateY(0); background: #10b981; }
-    40%, 100% { opacity: 0; transform: translateY(-10px); }
-  }
-  @keyframes ct-base {
-    0%, 20.7% { content: "Queued"; }
-    20.8%, 100% { content: "Sent"; }
-  }
-
-  @keyframes st-client-cancel {
-    0%, 31% { opacity: 0; transform: translateY(10px); }
-    33.3%, 58.2% { opacity: 1; transform: translateY(0); background: #3b82f6; }
-    58.3%, 75% { opacity: 1; transform: translateY(0); background: #ef4444; }
-    80%, 100% { opacity: 0; transform: translateY(-10px); }
-  }
-  @keyframes ct-client-cancel {
-    0%, 58.2% { content: "Queued"; }
-    58.3%, 100% { content: "Cancelled"; }
-  }
-
-  @keyframes st-client-relay {
-    0%, 31% { opacity: 0; transform: translateY(10px); }
-    33.3%, 45.7% { opacity: 1; transform: translateY(0); background: #3b82f6; }
-    45.8%, 60% { opacity: 1; transform: translateY(0); background: #10b981; }
-    65%, 100% { opacity: 0; transform: translateY(-10px); }
-  }
-  @keyframes ct-client-relay {
-    0%, 45.7% { content: "Queued"; }
-    45.8%, 100% { content: "Sent"; }
-  }
-
-  @keyframes st-router {
-    0%, 57% { opacity: 0; transform: translateY(10px); }
-    58.3%, 62.4% { opacity: 1; transform: translateY(0); background: #3b82f6; }
-    62.5%, 75% { opacity: 1; transform: translateY(0); background: #10b981; }
-    80%, 100% { opacity: 0; transform: translateY(-10px); }
-  }
-  @keyframes ct-router {
-    0%, 62.4% { content: "Queued"; }
-    62.5%, 100% { content: "Sent"; }
-  }
-
-  @keyframes st-client-right {
-    0%, 57% { opacity: 0; transform: translateY(10px); }
-    58.3%, 74.9% { opacity: 1; transform: translateY(0); background: #3b82f6; }
-    75%, 90% { opacity: 1; transform: translateY(0); background: #ef4444; }
-    95%, 100% { opacity: 0; transform: translateY(-10px); }
-  }
-  @keyframes ct-client-right {
-    0%, 74.9% { content: "Queued"; }
-    75%, 100% { content: "Cancelled"; }
-  }
-
-  @keyframes st-dest {
-    0%, 73% { opacity: 0; transform: translateY(10px); }
-    75%, 95% { opacity: 1; transform: translateY(0); background: #10b981; }
-    98%, 100% { opacity: 0; transform: translateY(-10px); }
-  }
-  @keyframes ct-dest { 0%, 100% { content: "Received!"; } }
-
-  .mtopo-node {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 10;
-  }
-  .mtopo-device {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    position: relative;
-    z-index: 10;
-    filter: drop-shadow(0 6px 8px rgba(0,0,0,0.15));
-  }
-  .mtopo-label {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--color-neutral-800);
-    margin-top: 6px;
-    white-space: nowrap;
-    background: rgba(255,255,255,0.85);
-    padding: 4px 10px;
-    border-radius: 6px;
-  }
-  .mtopo-status {
-    position: absolute;
-    top: -30px;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 4px 10px;
-    border-radius: 12px;
-    color: white;
-    white-space: nowrap;
-    opacity: 0;
-  }
-  .mtopo-status::before { content: ""; }
-
-  #st-0 { animation: st-sender 12s infinite; }
-  #st-0::before { animation: ct-sender 12s infinite; }
-  #st-1 { animation: st-mute1 12s infinite; }
-  #st-1::before { animation: ct-mute1 12s infinite; }
-  #st-2 { animation: st-base 12s infinite; }
-  #st-2::before { animation: ct-base 12s infinite; }
-  #st-3, #st-4 { animation: st-client-cancel 12s infinite; }
-  #st-3::before, #st-4::before { animation: ct-client-cancel 12s infinite; }
-  #st-5 { animation: st-client-relay 12s infinite; }
-  #st-5::before { animation: ct-client-relay 12s infinite; }
-  #st-8 { animation: st-router 12s infinite; }
-  #st-8::before { animation: ct-router 12s infinite; }
-  #st-9 { animation: st-client-right 12s infinite; }
-  #st-9::before { animation: ct-client-right 12s infinite; }
-  #st-10 { animation: st-dest 12s infinite; }
-  #st-10::before { animation: ct-dest 12s infinite; }
+    #a-0-a { animation: st-0-a 12s infinite; }
+    #a-0-b { animation: st-0-b 12s infinite; }
+    #a-1-a { animation: st-1-a 12s infinite; }
+    #a-1-b { animation: st-1-b 12s infinite; }
+    #a-2-a { animation: st-2-a 12s infinite; }
+    #a-2-b { animation: st-2-b 12s infinite; }
+    #a-2-c { animation: st-2-c 12s infinite; }
+    #a-3-a { animation: st-3-a 12s infinite; }
+    #a-3-b { animation: st-3-b 12s infinite; }
+    #a-3-c { animation: st-3-c 12s infinite; }
+    #a-4-a { animation: st-3-a 12s infinite; }
+    #a-4-b { animation: st-3-b 12s infinite; }
+    #a-4-c { animation: st-3-c 12s infinite; }
+    #a-5-a { animation: st-5-a 12s infinite; }
+    #a-5-b { animation: st-5-b 12s infinite; }
+    #a-5-c { animation: st-5-c 12s infinite; }
+    #a-8-a { animation: st-8-a 12s infinite; }
+    #a-8-b { animation: st-8-b 12s infinite; }
+    #a-9-a { animation: st-9-a 12s infinite; }
+    #a-9-b { animation: st-9-b 12s infinite; }
+    #a-10-a { animation: st-10-a 12s infinite; }
 </style>
 
 <div style="display:flex; justify-content:center; align-items:center; flex:1; width:100%;">
@@ -515,71 +539,83 @@
       <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 250 325 L 450 275'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
       <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 250 325 L 600 375'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
       <circle cx="250" cy="325" fill="none" stroke="#10b981" stroke-width="2.5" style="animation: mtopo-ping-glow 12s infinite 2.5s;" />
-      <!-- Wave 2 Dupes (Orange) -->
-      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 250 325 L 100 250'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
-      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 250 325 L 100 400'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
+      <!-- Wave 2 Dupes -->
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 250 325 L 100 250'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 250 325 L 100 400'); animation: mtopo-ping-travel 12s infinite 2.5s;" /></g>
   
       <!-- Wave 3: Far Client (t=5.5s) -->
       <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 750 150'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
       <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 750 300'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
       <circle cx="600" cy="375" fill="none" stroke="#10b981" stroke-width="2.5" style="animation: mtopo-ping-glow 12s infinite 5.5s;" />
-      <!-- Wave 3 Dupes (Orange) -->
-      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 250 325'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
-      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 450 150'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
-      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 450 275'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
+      <!-- Wave 3 Dupes -->
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 250 325'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 450 150'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 600 375 L 450 275'); animation: mtopo-ping-travel 12s infinite 5.5s;" /></g>
   
       <!-- Wave 4: Router (t=7.5s) -->
       <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 920 225'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
       <circle cx="750" cy="150" fill="none" stroke="#10b981" stroke-width="2.5" style="animation: mtopo-ping-glow 12s infinite 7.5s;" />
-      <!-- Wave 4 Dupes (Orange) -->
-      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 450 150'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
-      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 450 275'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
-      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 600 375'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
-      <g><circle r="5" fill="#f97316" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 750 300'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
+      <!-- Wave 4 Dupes -->
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 450 150'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 450 275'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 600 375'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
+      <g><circle r="5" fill="#10b981" filter="url(#mtopo-glow)" style="offset-path: path('M 750 150 L 750 300'); animation: mtopo-ping-travel 12s infinite 7.5s;" /></g>
     </svg>
     
     <div class="mtopo-node" style="left: 10%; top: 50%;">
-      <div id="st-0" class="mtopo-status"></div>
+      <div id="a-0-a" class="mtopo-status bg-green">Sent</div>
+      <div id="a-0-b" class="mtopo-status bg-orange">Duplicate</div>
       <img src="assets/thinknode_m9.svg" class="mtopo-device">
       <div class="mtopo-label">client_mute</div>
     </div>
     <div class="mtopo-node" style="left: 10%; top: 80%;">
-      <div id="st-1" class="mtopo-status"></div>
+      <div id="a-1-a" class="mtopo-status bg-gray">Won't Relay</div>
+      <div id="a-1-b" class="mtopo-status bg-orange">Duplicate</div>
       <img src="assets/rak_wismesh_tag.svg" class="mtopo-device">
       <div class="mtopo-label">client_mute</div>
     </div>
     <div class="mtopo-node" style="left: 25%; top: 65%;">
-      <div id="st-2" class="mtopo-status"></div>
+      <div id="a-2-a" class="mtopo-status bg-blue">Queued</div>
+      <div id="a-2-b" class="mtopo-status bg-green">Sent</div>
+      <div id="a-2-c" class="mtopo-status bg-orange">Duplicate</div>
       <img src="assets/rak3401.svg" class="mtopo-device">
       <div class="mtopo-label">client_base</div>
     </div>
     <div class="mtopo-node" style="left: 45%; top: 30%;">
-      <div id="st-3" class="mtopo-status"></div>
+      <div id="a-3-a" class="mtopo-status bg-blue">Queued</div>
+      <div id="a-3-b" class="mtopo-status bg-orange">Duplicate</div>
+      <div id="a-3-c" class="mtopo-status bg-orange">Duplicate</div>
       <img src="assets/wio_tracker_l1_case.svg" class="mtopo-device">
       <div class="mtopo-label">client</div>
     </div>
     <div class="mtopo-node" style="left: 45%; top: 55%;">
-      <div id="st-4" class="mtopo-status"></div>
+      <div id="a-4-a" class="mtopo-status bg-blue">Queued</div>
+      <div id="a-4-b" class="mtopo-status bg-orange">Duplicate</div>
+      <div id="a-4-c" class="mtopo-status bg-orange">Duplicate</div>
       <img src="assets/rak4631_case.svg" class="mtopo-device">
       <div class="mtopo-label">client</div>
     </div>
     <div class="mtopo-node" style="left: 60%; top: 75%;">
-      <div id="st-5" class="mtopo-status"></div>
+      <div id="a-5-a" class="mtopo-status bg-blue">Queued</div>
+      <div id="a-5-b" class="mtopo-status bg-green">Sent</div>
+      <div id="a-5-c" class="mtopo-status bg-orange">Duplicate</div>
       <img src="assets/thinknode_m6.svg" class="mtopo-device">
       <div class="mtopo-label">client</div>
     </div>
     <div class="mtopo-node" style="left: 75%; top: 30%;">
-      <div id="st-8" class="mtopo-status"></div>
+      <div id="a-8-a" class="mtopo-status bg-blue">Queued</div>
+      <div id="a-8-b" class="mtopo-status bg-green">Sent</div>
       <img src="assets/station-g3.svg" class="mtopo-device">
       <div class="mtopo-label">router</div>
     </div>
     <div class="mtopo-node" style="left: 75%; top: 60%;">
-      <div id="st-9" class="mtopo-status"></div>
+      <div id="a-9-a" class="mtopo-status bg-blue">Queued</div>
+      <div id="a-9-b" class="mtopo-status bg-orange">Duplicate</div>
       <img src="assets/seeed_solar.svg" class="mtopo-device">
       <div class="mtopo-label">client</div>
     </div>
     <div class="mtopo-node" style="left: 92%; top: 45%;">
-      <div id="st-10" class="mtopo-status"></div>
+      <div id="a-10-a" class="mtopo-status bg-green">Received</div>
       <img src="assets/tracker-t1000-e.svg" class="mtopo-device">
       <div class="mtopo-label">client_mute</div>
     </div>
@@ -859,6 +895,7 @@
 </x-dc>
 </body>
 </html>
+
 
 
 
