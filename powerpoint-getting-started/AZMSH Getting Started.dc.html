@@ -321,10 +321,10 @@
   <p style="font-size:27px;line-height:1.45;margin:0;color:var(--color-neutral-700)">The three client roles all have a place on your nodes and you can confidently use any of them that make sense for your application. Router Late and especially Router can actually cause problems for other mesh users if not applied correctly. If you aren't sure, ask in Discord!</p>
 </section>
 
-<section data-label="Example Message Propagation" data-screen-label="09" data-speaker-notes="This shows how roles affect routing timing. A message leaves the sender. A Client Mute and Client Base hear it; Mute ignores, Base queues. Base broadcasts, 3 Clients hear. Furthest Client goes first due to timing, cancelling the others. Then a Router hears it and goes immediately." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
+<section data-label="Example Message Flow" data-screen-label="09" data-speaker-notes="This shows how roles affect routing timing. A message leaves the sender. A Client Mute and Client Base hear it; Mute ignores, Base queues. Base broadcasts, 3 Clients hear. Furthest Client goes first due to timing, cancelling the others. Then a Router hears it and goes immediately." style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);padding:76px 96px 68px;display:flex;flex-direction:column;gap:40px">
   <div style="display:flex;justify-content:space-between;align-items:baseline;font-size:24px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)"><span>AZMSH &mdash; Arizona Meshtastic Community</span><span>08</span></div>
   <div style="display:flex;align-items:flex-end;gap:64px">
-    <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Example Message Propagation</h2>
+    <h2 style="font-family:var(--font-heading);font-size:64px;line-height:1.04;margin:0;flex:0 0 620px">Example Message Flow</h2>
     <p style="font-size:30px;line-height:1.5;margin:0 0 6px;color:var(--color-neutral-800)">Roles affect <em>when</em> a node rebroadcasts, preventing collisions.</p>
   </div>
   <style>
@@ -847,5 +847,6 @@
 </x-dc>
 </body>
 </html>
+
 
 
