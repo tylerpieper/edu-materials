@@ -721,6 +721,7 @@
 
       this._onFullscreenChange = () => {
         this._presenting = !!document.fullscreenElement;
+        this._syncRailHidden();
         this._fit();
       };
       document.addEventListener('fullscreenchange', this._onFullscreenChange);
