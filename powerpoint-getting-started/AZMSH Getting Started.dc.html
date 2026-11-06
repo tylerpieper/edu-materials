@@ -16,7 +16,67 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@0.462.0/dist/umd/lucide.min.js"></script>
 <style>
-  body { margin: 0; background: #2e2b25; }
+:root {
+  --color-bg: #111215;
+  --color-surface: #1a1c23;
+  --color-text: #f4f4f6;
+  --color-accent: #f97316;
+  --color-accent-2: #38bdf8;
+  --color-divider: rgba(255, 255, 255, 0.12);
+
+  /* Clean dark neutral ramp: from bright white text down to deep slate-black surfaces */
+  --color-neutral-100: #ffffff;
+  --color-neutral-200: rgba(255, 255, 255, 0.04);
+  --color-neutral-300: #2d3139;
+  --color-neutral-400: #646a78;
+  --color-neutral-500: #88909f;
+  --color-neutral-600: #9da3b2;
+  --color-neutral-700: #cbd1dc;
+  --color-neutral-800: #e5e7eb;
+  --color-neutral-900: #0a0b0d;
+
+  /* Luminous accent ramps (amber/orange and sky blue/cyan) tuned for dark surfaces */
+  --color-accent-100: #fff7ed;
+  --color-accent-200: #ffedd5;
+  --color-accent-300: #fdba74;
+  --color-accent-400: #fb923c;
+  --color-accent-500: #f97316;
+  --color-accent-600: #ea580c;
+  --color-accent-700: #fb923c;
+  --color-accent-800: #21242d;
+  --color-accent-900: #16181f;
+
+  --color-accent-2-100: #f0f9ff;
+  --color-accent-2-200: #bae6fd;
+  --color-accent-2-300: #7dd3fc;
+  --color-accent-2-400: #38bdf8;
+  --color-accent-2-500: #0ea5e9;
+  --color-accent-2-600: #0284c7;
+  --color-accent-2-700: #38bdf8;
+  --color-accent-2-800: #1b202c;
+  --color-accent-2-900: #0e1014;
+
+  --font-heading: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-heading-weight: 600;
+  --font-body: "Figtree", system-ui, sans-serif;
+
+  --space-1: 4.4px;
+  --space-2: 8.8px;
+  --space-3: 13.2px;
+  --space-4: 17.6px;
+  --space-6: 26.4px;
+  --space-8: 35.2px;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+
+  /* Elevation — soft atmospheric darkness on dark themes */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.65);
+}
+  body { margin: 0; background: #0e1014; }
   svg.lucide { stroke-width: 2.75; width: 100%; height: 100%; }
   a { color: var(--color-accent-700); }
   a:hover { color: var(--color-accent-600); }
@@ -372,26 +432,26 @@
       <h3 style="font-family:var(--font-heading);font-size:36px;margin:0">Client</h3>
       <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-neutral-800)">The standard role. Extends coverage for your neighbors. Most home nodes belong here. It's also great for vehicles, helping your pocket node get onto the mesh from inside a building.</p>
     </div>
-    <div style="background:var(--color-accent-2-200);border-radius:var(--radius-lg);padding:30px 30px 32px;display:flex;flex-direction:column;gap:14px">
+    <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:30px 30px 32px;display:flex;flex-direction:column;gap:14px">
       <div style="position:relative;height:110px;display:flex;align-items:center;justify-content:center">
-        <span style="position:absolute;width:78px;height:78px;border-radius:999px;border:3px solid var(--color-accent-2-600);animation:azFan 4.4s ease-out infinite"></span>
-        <span style="position:absolute;width:78px;height:78px;border-radius:999px;border:3px solid var(--color-accent-2-600);animation:azFan 4.4s ease-out infinite;animation-delay:2.2s"></span>
+        <span style="position:absolute;width:78px;height:78px;border-radius:999px;border:3px solid var(--color-accent-2-400);animation:azFan 4.4s ease-out infinite"></span>
+        <span style="position:absolute;width:78px;height:78px;border-radius:999px;border:3px solid var(--color-accent-2-400);animation:azFan 4.4s ease-out infinite;animation-delay:2.2s"></span>
         <span style="display:flex;align-items:center;justify-content:center;width:78px;height:78px;border-radius:999px;background:var(--color-accent-2-600);color:var(--color-neutral-100);position:relative;z-index:1"><span style="display:block;width:38px;height:38px"><i data-lucide="star"></i></span></span>
       </div>
-      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-2-800)">Priority relay for your nodes</div>
-      <h3 style="font-family:var(--font-heading);font-size:36px;margin:0;color:var(--color-accent-2-900)">Client Base</h3>
-      <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-accent-2-900)">Good for any node that you want to relay traffic from your own nodes (rooftops, vehicles, etc.). It gives priority to rebroadcasting anything from or to your favorites.</p>
+      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-2-400)">Priority relay for your nodes</div>
+      <h3 style="font-family:var(--font-heading);font-size:36px;margin:0;color:var(--color-neutral-100)">Client Base</h3>
+      <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-neutral-800)">Good for any node that you want to relay traffic from your own nodes (rooftops, vehicles, etc.). It gives priority to rebroadcasting anything from or to your favorites.</p>
     </div>
-    <div style="background:var(--color-accent-200);border-radius:var(--radius-lg);padding:30px 30px 32px;display:flex;flex-direction:column;gap:14px">
+    <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:30px 30px 32px;display:flex;flex-direction:column;gap:14px">
       <div style="position:relative;height:110px;display:flex;align-items:center;justify-content:center">
-        <span style="position:absolute;width:78px;height:78px;border-radius:999px;border:3px solid var(--color-accent-600);animation:azFan 2.7s ease-out infinite"></span>
-        <span style="position:absolute;width:78px;height:78px;border-radius:999px;border:3px solid var(--color-accent-600);animation:azFan 2.7s ease-out infinite;animation-delay:0.9s"></span>
-        <span style="position:absolute;width:78px;height:78px;border-radius:999px;border:3px solid var(--color-accent-600);animation:azFan 2.7s ease-out infinite;animation-delay:1.8s"></span>
+        <span style="position:absolute;width:78px;height:78px;border-radius:999px;border:3px solid var(--color-accent-500);animation:azFan 2.7s ease-out infinite"></span>
+        <span style="position:absolute;width:78px;height:78px;border-radius:999px;border:3px solid var(--color-accent-500);animation:azFan 2.7s ease-out infinite;animation-delay:0.9s"></span>
+        <span style="position:absolute;width:78px;height:78px;border-radius:999px;border:3px solid var(--color-accent-500);animation:azFan 2.7s ease-out infinite;animation-delay:1.8s"></span>
         <span style="display:flex;align-items:center;justify-content:center;width:78px;height:78px;border-radius:999px;background:var(--color-accent-600);color:var(--color-neutral-100);position:relative;z-index:1"><span style="display:block;width:38px;height:38px"><i data-lucide="radio-tower"></i></span></span>
       </div>
-      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-800)">Hilltops and towers only</div>
-      <h3 style="font-family:var(--font-heading);font-size:36px;margin:0;color:var(--color-accent-900)">Router / Router Late</h3>
-      <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-accent-900)">Relay every single message. Router will cut in line and rebroadcast before a Client gets a chance to. A poorly placed Router will degrade the mesh by cancelling other Client nodes. Router Late is useful to fill in gaps like those from terrain where a full router isn't needed.</p>
+      <div style="font-size:24px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent-400)">Hilltops and towers only</div>
+      <h3 style="font-family:var(--font-heading);font-size:36px;margin:0;color:var(--color-neutral-100)">Router / Router Late</h3>
+      <p style="font-size:24px;line-height:1.4;margin:0;color:var(--color-neutral-800)">Relay every single message. Router will cut in line and rebroadcast before a Client gets a chance to. A poorly placed Router will degrade the mesh by cancelling other Client nodes. Router Late is useful to fill in gaps like those from terrain where a full router isn't needed.</p>
     </div>
   </div>
   <p style="font-size:27px;line-height:1.45;margin:0;color:var(--color-neutral-700)">The three client roles all have a place on your nodes and you can confidently use any of them that make sense for your application. Router Late and especially Router can actually cause problems for other mesh users if not applied correctly. If you aren't sure, ask in Discord!</p>
@@ -436,10 +496,11 @@
     .mtopo-label {
       font-size: 16px;
       font-weight: 600;
-      color: var(--color-neutral-800);
+      color: var(--color-neutral-100);
       margin-top: 6px;
       white-space: nowrap;
-      background: rgba(255,255,255,0.85);
+      background: rgba(26, 28, 35, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       padding: 4px 10px;
       border-radius: 6px;
     }
@@ -878,9 +939,9 @@
       <p style="font-size:27px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Send it on the primary MediumFast channel. Send it as many times as you like.</p>
       <div style="background:var(--color-accent-500);color:var(--color-neutral-100);border-radius:22px 22px 6px 22px;padding:20px 28px;align-self:flex-end;font-size:30px;font-weight:600">test</div>
       <div style="display:flex;gap:14px;align-items:center">
-        <span style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:999px;background:var(--color-neutral-100);font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;animation:azBlink 3s ease-in-out infinite">2</span>
-        <span style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:999px;background:var(--color-neutral-100);font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;animation:azBlink 3s ease-in-out infinite;animation-delay:0.5s">3</span>
-        <span style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:999px;background:var(--color-neutral-100);font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;animation:azBlink 3s ease-in-out infinite;animation-delay:1s">*</span>
+        <span style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:999px;background:#242731;color:#ffffff;border:2px solid var(--color-accent-400);font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;animation:azBlink 3s ease-in-out infinite">2</span>
+        <span style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:999px;background:#242731;color:#ffffff;border:2px solid var(--color-accent-400);font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;animation:azBlink 3s ease-in-out infinite;animation-delay:0.5s">3</span>
+        <span style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:999px;background:#242731;color:#ffffff;border:2px solid var(--color-accent-400);font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;animation:azBlink 3s ease-in-out infinite;animation-delay:1s">*</span>
       </div>
       <p style="font-size:26px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Tapback replies come back as numbers. The number is how many hops away the sender is, and an asterisk means they heard you directly.</p>
     </div>
