@@ -8,9 +8,9 @@ Presentations, brochures, and guides for learning Meshtastic in Arizona.
 
 [![Community](https://img.shields.io/badge/Community-AZMSH-c86726)](https://azmsh.net)
 [![Topic](https://img.shields.io/badge/Topic-Meshtastic-71351c)](https://meshtastic.org)
-[![Discord](https://img.shields.io/badge/Chat-Discord-5865F2)](https://discord.gg/HrKtyuFEQk)
+[![Discord](https://img.shields.io/badge/Chat-Discord-5865F2)](https://discord.gg/HatTKSAA)
 
-[Website](https://azmsh.net) · [Join Discord](https://discord.gg/HrKtyuFEQk) · [Browse materials](#available-materials)
+[Website](https://azmsh.net) · [Join Discord](https://discord.gg/HatTKSAA) · [Browse materials](#available-materials)
 
 </div>
 
@@ -70,7 +70,7 @@ Hardware prices in the presentation were checked September 9, 2026. Confirm curr
 | Where | Details |
 | --- | --- |
 | Website | [azmsh.net](https://azmsh.net) |
-| Discord | [Join the AZMSH server](https://discord.gg/HrKtyuFEQk) |
+| Discord | [Join the AZMSH server](https://discord.gg/HatTKSAA) |
 | Sunday radio chat | 5 pm on primary MediumFast |
 | Monday voice chat | 7 pm on Discord |
 

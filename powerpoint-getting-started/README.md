@@ -31,7 +31,7 @@ Hardware prices were checked September 9, 2026. Confirm current options, availab
 ## Community
 
 - [AZMSH](https://azmsh.net)
-- [Discord](https://discord.gg/HrKtyuFEQk)
+- [Discord](https://discord.gg/HatTKSAA)
 - Sunday radio chat: 5 pm on primary MediumFast
 - Monday voice chat: 7 pm on Discord
 
