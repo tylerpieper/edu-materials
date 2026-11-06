@@ -90,7 +90,7 @@
   <div style="font-size:26px;letter-spacing:0.22em;text-transform:uppercase;color:var(--color-accent-300)">Arizona Meshtastic Community</div>
   <div style="display:flex;flex-direction:column;gap:40px;max-width:1120px;position:relative">
     <h1 style="font-family:var(--font-heading);font-size:132px;line-height:0.98;margin:0;color:var(--color-neutral-100)">Getting Started with Meshtastic</h1>
-    <p style="font-size:40px;line-height:1.4;margin:0;color:var(--color-accent-2-200);max-width:1060px">A step-by-step guide to joining Arizona's free, off-grid mesh radio network. No cell service, no subscriptions, no license required.</p>
+    <p style="font-size:40px;line-height:1.4;margin:0;color:var(--color-accent-2-200);max-width:1060px">Why Part 15 Mesh networks should be part of your toolkit</p>
   </div>
   <div style="display:flex;align-items:center;gap:24px;position:relative">
     <span style="width:14px;height:14px;border-radius:999px;background:var(--color-accent-500);animation:azBlink 5s ease-in-out infinite"></span>
@@ -133,17 +133,31 @@
     <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:44px;display:flex;flex-direction:column;gap:20px">
       <span style="display:block;width:64px;height:64px;color:var(--color-accent-2-700)"><i data-lucide="message-square"></i></span>
       <h3 style="font-family:var(--font-heading);font-size:40px;margin:0">Off-Grid Messaging</h3>
-      <p style="font-size:24px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Share text messages, positions, map waypoints, telemetry, sensor data, and more &mdash; just not data intensive items like voice, pictures, or video. Does not rely on Wi-Fi, cell networks, or internet. If a message makes it from Nogales to Surprise, it did it over RF!</p>
+      <ul style="font-size:22px;line-height:1.45;margin:0;padding-left:28px;color:var(--color-neutral-800);display:flex;flex-direction:column;gap:12px">
+        <li>Share text, position, telemetry, and more</li>
+        <li>No internet or cell networks involved</li>
+        <li>Conversations between TUS and PHX are RF-only!</li>
+      </ul>
     </div>
     <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:44px;display:flex;flex-direction:column;gap:20px">
       <span style="display:block;width:64px;height:64px;color:var(--color-accent-700)"><i data-lucide="share-2"></i></span>
       <h3 style="font-family:var(--font-heading);font-size:40px;margin:0">Decentralized Mesh</h3>
-      <p style="font-size:24px;line-height:1.45;margin:0;color:var(--color-neutral-800)">No routing tables or central servers required. Each message is handled independently and any node that hears it passes it along. No single points of failure and only minimal coordination required.</p>
+      <ul style="font-size:22px;line-height:1.45;margin:0;padding-left:28px;color:var(--color-neutral-800);display:flex;flex-direction:column;gap:12px">
+        <li>No routing tables or central servers</li>
+        <li>Most nodes contribute to message delivery</li>
+        <li>Infrastructure helps, but not required</li>
+      </ul>
     </div>
     <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:44px;display:flex;flex-direction:column;gap:20px">
       <span style="display:block;width:64px;height:64px;color:var(--color-accent-700)"><i data-lucide="lock"></i></span>
       <h3 style="font-family:var(--font-heading);font-size:40px;margin:0">Encrypted</h3>
-      <p style="font-size:21px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Unlike packet radio modes, Meshtastic is encrypted by default. Public channels use a simple shared key. Private channels can be created where only nodes with the key can read the messages. Direct Messages are encrypted using both nodes' keys. Even if your traffic is encrypted, the rest of the mesh will still relay your messages!</p>
+      <ul style="font-size:21px;line-height:1.4;margin:0;padding-left:28px;color:var(--color-neutral-800);display:flex;flex-direction:column;gap:10px">
+        <li>All traffic encrypted by default</li>
+        <li>Public channels use a shared key</li>
+        <li>Private channels can only be read by those with the key</li>
+        <li>Direct messages encrypt with both nodes' keys</li>
+        <li>Other nodes will still relay your private traffic</li>
+      </ul>
     </div>
   </div>
 </section>
