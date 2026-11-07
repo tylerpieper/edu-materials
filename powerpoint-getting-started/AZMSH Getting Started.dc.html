@@ -314,18 +314,18 @@
       <span style="display:block;width:56px;height:56px;color:var(--color-accent-2-700)"><i data-lucide="route"></i></span>
       <h3 style="font-family:var(--font-heading);font-size:36px;margin:0">Managed Flood Routing</h3>
       <ul style="font-size:21px;line-height:1.4;margin:0;padding-left:26px;color:var(--color-neutral-800);display:flex;flex-direction:column;gap:8px">
-        <li>No routing tables, centralized towers, or single points of failure</li>
         <li>Every receiving node checks the message ID; new packets are rebroadcast</li>
-        <li>Duplicates are silently dropped to conserve shared airtime</li>
+        <li>Client nodes wait to see if a better-positioned node goes first, and stays quiet if so</li>
+        <li>Duplicates and messages forwarded by others are dropped</li>
       </ul>
     </div>
     <div style="background:var(--color-surface);border-radius:var(--radius-lg);padding:36px;display:flex;flex-direction:column;gap:14px">
       <span style="display:block;width:56px;height:56px;color:var(--color-accent-700)"><i data-lucide="arrow-down-to-dot"></i></span>
       <h3 style="font-family:var(--font-heading);font-size:36px;margin:0">Hop Limits</h3>
       <ul style="font-size:21px;line-height:1.4;margin:0;padding-left:26px;color:var(--color-neutral-800);display:flex;flex-direction:column;gap:8px">
-        <li>Each packet carries a Hop Limit counter (typically 3 to 5 hops)</li>
+        <li>Each packet carries a Hop Limit counter (typically 3 to 7 hops)</li>
         <li>Each relaying node decrements the counter by 1 before transmitting</li>
-        <li>At zero hops, packets are delivered to the recipient and stop relaying</li>
+        <li>At zero hops, the packet is dropped, preventing long loops and keeping the mesh semi-local</li>
       </ul>
     </div>
   </div>
@@ -964,14 +964,14 @@
         <span style="display:block;width:40px;height:40px;flex:0 0 40px;margin-top:4px;color:var(--color-accent-700)"><i data-lucide="badge-check"></i></span>
         <div>
           <h3 style="font-family:var(--font-heading);font-size:34px;margin:0 0 6px">Claim your node</h3>
-          <p style="font-size:26px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Type /node claim in Discord, then react with the pie emoji in #getting-started to opt into diagnostics.</p>
+          <p style="font-size:25px;line-height:1.4;margin:0;color:var(--color-neutral-800)">Claim your node in the #node-discovery channel, and then click the "Pie" emoji in #getting-started to give yourself access to our online diagnostics tools</p>
         </div>
       </div>
       <div style="display:flex;gap:24px;align-items:flex-start">
         <span style="display:block;width:40px;height:40px;flex:0 0 40px;margin-top:4px;color:var(--color-accent-700)"><i data-lucide="route"></i></span>
         <div>
-          <h3 style="font-family:var(--font-heading);font-size:34px;margin:0 0 6px">Read your traceroutes</h3>
-          <p style="font-size:26px;line-height:1.45;margin:0;color:var(--color-neutral-800)">Once opted in, view.azmsh.net/nodelist shows every hop your messages took and who traced you back.</p>
+          <h3 style="font-family:var(--font-heading);font-size:34px;margin:0 0 6px">Check your reach</h3>
+          <p style="font-size:25px;line-height:1.4;margin:0;color:var(--color-neutral-800)">Once opted in, you can use view.azmsh.net and s.azmsh.net (our new home-grown dashboard Sonoran) to see how far your messages reach as well as a ton of other useful insights.</p>
         </div>
       </div>
     </div>
